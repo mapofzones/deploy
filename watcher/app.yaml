@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: example-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: example-app
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: watcher
+    repoURL: 'https://github.com/mapofzones/deploy.git'
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+kind: Application
