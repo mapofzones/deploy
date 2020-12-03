@@ -48,13 +48,13 @@ spec:
         imagePullPolicy: Always
         # ports:
         # - containerPort: 5000
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "50m"
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "50m"
+        #   limits:
+        #     memory: "256Mi"
+        #     cpu: "500m"
         volumeMounts:
         # - name: secret-volume
           # mountPath: /secrets/
@@ -72,13 +72,13 @@ spec:
         imagePullPolicy: Always
         # ports:
         # - containerPort: 5000
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "50m"
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "50m"
+        #   limits:
+        #     memory: "256Mi"
+        #     cpu: "500m"
         volumeMounts:
         - name: config-volume
           mountPath: /configs/
