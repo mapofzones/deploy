@@ -54,7 +54,7 @@ spec:
           # mountPath: /secrets/
         - name: config-volume
           mountPath: /configs/
-      # volumes:
+      volumes:
       # - name: secret-volume
         # secret:
           # secretName: mysecret
