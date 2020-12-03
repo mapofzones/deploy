@@ -23,6 +23,22 @@ spec:
       containers:
       - name: example-app
         image: registry.digitalocean.com/mapofzones/cosmos-watcher@sha256:84bdb1f8e13a89958ee37ade7bdcd4a15440287d5bc68c1b61bc6c7629b45d79
+        env:
+          - name: SECRET_RPC
+            valueFrom:
+              secretKeyRef:
+                name: rpc
+                key: http://18.220.101.192:26657
+          - name: SECRET_RABBITMQ
+            valueFrom:
+              secretKeyRef:
+                name: rabbitmq
+                key: amqp://watcher:kjadsfuipqwhjfd@165.232.40.207:5672
+          - name: SECRET_GRAPHQL
+            valueFrom:
+              secretKeyRef:
+                name: graphql
+                key: http://165.232.107.244:8081/v1/graphql
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
@@ -34,14 +50,14 @@ spec:
             memory: "256Mi"
             cpu: "500m"
         volumeMounts:
-        - name: secret-volume
-          mountPath: /secrets/
+        # - name: secret-volume
+          # mountPath: /secrets/
         - name: config-volume
           mountPath: /configs/
-      volumes:
-      - name: secret-volume
-        secret:
-          secretName: mysecret
+      # volumes:
+      # - name: secret-volume
+        # secret:
+          # secretName: mysecret
       - name: config-volume
         configMap:
           name: example-config #name of our configmap object
