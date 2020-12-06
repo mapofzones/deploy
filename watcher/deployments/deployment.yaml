@@ -46,9 +46,9 @@ spec:
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
-        volumeMounts:
-        - name: config-volume
-          mountPath: /configs/
+        # volumeMounts:
+        # - name: config-volume
+        #   mountPath: /configs/
       - name: stargate-4
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
