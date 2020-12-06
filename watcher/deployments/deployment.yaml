@@ -26,25 +26,16 @@ spec:
         env:
           - name: rpc
             value: "http://18.220.101.192:26657"
-          # - name: SECRET_RPC
-            # valueFrom:
-            #   secretKeyRef:
-            #     name: rpc
-            #     key: http://18.220.101.192:26657
-          # - name: SECRET_RABBITMQ
-          #   valueFrom:
-          #     secretKeyRef:
-          #       name: rabbitmq
-          #       key: amqp://watcher:kjadsfuipqwhjfd@165.232.40.207:5672
           - name: rabbitmq
-            value: "amqp://watcher:kjadsfuipqwhjfd@165.232.40.207:5672"
-          # - name: SECRET_GRAPHQL
-          #   valueFrom:
-          #     secretKeyRef:
-          #       name: graphql
-          #       key: http://165.232.107.244:8081/v1/graphql
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
           - name: graphql
-            value: "http://165.232.107.244:8081/v1/graphql"
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
         imagePullPolicy: Always
         # ports:
         # - containerPort: 5000
@@ -66,9 +57,15 @@ spec:
           - name: rpc
             value: "http://34.123.30.100:26657"
           - name: rabbitmq
-            value: "amqp://watcher:kjadsfuipqwhjfd@165.232.40.207:5672"
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
           - name: graphql
-            value: "http://165.232.107.244:8081/v1/graphql"
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
         imagePullPolicy: Always
         # ports:
         # - containerPort: 5000
