@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-deploy
+  name: watchers-deploy
   labels:
-    app: example-app
+    app: watchers-app
   annotations:
 spec:
   selector:
     matchLabels:
-      app: example-app
+      app: watchers-app
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -18,10 +18,10 @@ spec:
   template:
     metadata:
       labels:
-        app: example-app
+        app: watchers-app
     spec:
       containers:
-      - name: example-app
+      - name: regen-devnet-2
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
           - name: rpc
@@ -49,7 +49,7 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /configs/
-      - name: example-app2
+      - name: stargate-4
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
           - name: rpc
@@ -74,10 +74,10 @@ spec:
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
-        volumeMounts:
-        - name: config-volume
-          mountPath: /configs/
-      volumes:
-      - name: config-volume
-        configMap:
-          name: example-config #name of our configmap object
+      #   volumeMounts:
+      #   - name: config-volume
+      #     mountPath: /configs/
+      # volumes:
+      # - name: config-volume
+      #   configMap:
+      #     name: example-config #name of our configmap object
