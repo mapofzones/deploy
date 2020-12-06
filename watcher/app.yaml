@@ -4,7 +4,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: example-app
+    namespace: dev
     server: 'https://kubernetes.default.svc'
   source:
     path: watcher
