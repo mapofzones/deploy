@@ -7,7 +7,7 @@ spec:
     namespace: dev
     server: 'https://kubernetes.default.svc'
   source:
-    path: watcher
+    path: dev
     repoURL: 'https://github.com/mapofzones/deploy.git'
     targetRevision: HEAD
     directory:
