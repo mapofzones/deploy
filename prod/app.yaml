@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: prod-moz
+  namespace: argocd
+spec:
+  destination:
+    namespace: prod
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: prod
+    repoURL: 'https://github.com/mapofzones/deploy.git'
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  project: default
+  syncPolicy: null
+kind: Application

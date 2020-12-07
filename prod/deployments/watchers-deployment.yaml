@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: watchers-deploy
+  labels:
+    app: watchers-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: watchers-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: watchers-app
+    spec:
+      containers:
+      - name: regen-devnet-2
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        env:
+          - name: rpc
+            value: "http://18.220.101.192:26657"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+        #   limits:
+        #     memory: "256Mi"
+        #     cpu: "500m"
+      - name: stargate-4
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        env:
+          - name: rpc
+            value: "http://34.123.30.100:26657"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+        #   limits:
+        #     memory: "256Mi"
+        #     cpu: "500m"
