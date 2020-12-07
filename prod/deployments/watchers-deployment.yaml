@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: regen-devnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:1e4b0398
         env:
           - name: rpc
             value: "http://18.220.101.192:26657"
@@ -45,7 +45,7 @@ spec:
         #     memory: "256Mi"
         #     cpu: "500m"
       - name: stargate-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:1e4b0398
         env:
           - name: rpc
             value: "http://34.123.30.100:26657"
