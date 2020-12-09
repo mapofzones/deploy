@@ -1,15 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: hasura
   name: hasura
   namespace: dev
 spec:
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
   selector:
     app: hasura
-  type: LoadBalancer
+  ports:
+  - protocol: TCP
+  - port: 80
+    targetPort: 8080
