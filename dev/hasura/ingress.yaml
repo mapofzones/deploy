@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - test.biteacon.xyz
+    - test2.biteacon.xyz
     secretName: hello-kubernetes-tls
   rules:
-  - host: test.biteacon.xyz
+  - host: test2.biteacon.xyz
     http:
       paths:
       - path: /
