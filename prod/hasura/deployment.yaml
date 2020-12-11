@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hasura
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hasura
+  template:
+    metadata:
+      labels:
+        app: hasura
+    spec:
+      containers:
+      - name: hasura
+        image: hasura/graphql-engine:v1.3.3
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: HASURA_GRAPHQL_DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: prodsecret
+              key: hasura_db_url
+        - name: HASURA_GRAPHQL_ADMIN_SECRET
+          valueFrom:
+           secretKeyRef:
+             name: prodsecret
+             key: hasura_admin_secret
+        - name: HASURA_GRAPHQL_UNAUTHORIZED_ROLE
+          value: front
+        - name: HASURA_GRAPHQL_MIGRATIONS_DIR
+          value: /hasura-migrations
+        - name: HASURA_GRAPHQL_METADATA_DIR
+          value: /hasura-metadata
+        ## enable the console served by server. It is recommended to disable this in production
+        - name: HASURA_GRAPHQL_ENABLE_CONSOLE
+          value: "true"
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
+          protocol: TCP
