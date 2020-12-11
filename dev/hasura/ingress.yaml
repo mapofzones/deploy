@@ -5,14 +5,14 @@ metadata:
   namespace: dev
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    # certmanager.k8s.io/issuer: "letsencrypt-staging"
-    # certmanager.k8s.io/issuer: "letsencrypt-prod"
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-staging"
+    # certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
     # certmanager.k8s.io/acme-challenge-type: http01
 spec:
-  # tls:
-  # - hosts:
-  #   - test2.biteacon.xyz
-  #   secretName: hello-kubernetes-tls
+  tls:
+  - hosts:
+    - test2.biteacon.xyz
+    secretName: test2-kubernetes-tls
   rules:
   - host: test2.biteacon.xyz
     http:
