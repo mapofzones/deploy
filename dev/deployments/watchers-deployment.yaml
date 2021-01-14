@@ -24,6 +24,10 @@ spec:
       - name: regen-devnet-2
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
+          - name: http_proxy
+            value: http://46.101.95.106:9999
+          - name: https_proxy
+            value: http://46.101.95.106:9999
           - name: rpc
             value: "http://18.220.101.192:26657"
           - name: rabbitmq
@@ -47,6 +51,10 @@ spec:
       - name: stargate-4
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
+          - name: http_proxy
+            value: http://46.101.95.106:9999
+          - name: https_proxy
+            value: http://46.101.95.106:9999
           - name: rpc
             value: "http://34.123.30.100:26657"
           - name: rabbitmq
@@ -70,6 +78,10 @@ spec:
       - name: cosmoshub-test-stargate-e
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
+          - name: http_proxy
+            value: http://46.101.95.106:9999
+          - name: https_proxy
+            value: http://46.101.95.106:9999
           - name: rpc
             value: "http://162.222.177.241:26657"
           - name: rabbitmq
