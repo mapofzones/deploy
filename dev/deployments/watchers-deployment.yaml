@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: regen-devnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
           - name: rpc
             value: "http://46.101.95.106:26657"
