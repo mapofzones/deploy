@@ -44,6 +44,29 @@ spec:
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
+      - name: aplikigo-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
+        env:
+          - name: rpc
+            value: "http://46.101.95.106:26658"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "5m"
+        #   limits:
+        #     memory: "256Mi"
+        #     cpu: "500m"
       - name: stargate-4
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
