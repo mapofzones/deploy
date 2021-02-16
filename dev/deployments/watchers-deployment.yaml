@@ -37,10 +37,10 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
+#        resources:
+#          requests:
+#            memory: "30Mi"
+#            cpu: "5m"
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
@@ -60,10 +60,10 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "5m"
+#        resources:
+#          requests:
+#            memory: "128Mi"
+#            cpu: "5m"
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
@@ -83,10 +83,10 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
+#        resources:
+#          requests:
+#            memory: "30Mi"
+#            cpu: "5m"
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
@@ -107,9 +107,9 @@ spec:
                 key: db_graphql
         imagePullPolicy: Always
         resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
+#          requests:
+#            memory: "30Mi"
+#            cpu: "5m"
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
@@ -129,10 +129,10 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
+#        resources:
+#          requests:
+#            memory: "30Mi"
+#            cpu: "5m"
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
@@ -152,10 +152,10 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
+#        resources:
+#          requests:
+#            memory: "30Mi"
+#            cpu: "5m"
         #   limits:
         #     memory: "256Mi"
         #     cpu: "500m"
