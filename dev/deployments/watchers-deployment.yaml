@@ -68,7 +68,7 @@ spec:
             memory: "128Mi"
             cpu: "10m"
       - name: stargate-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
           - name: rpc
             value: "http://34.123.30.100:26657"
@@ -91,7 +91,7 @@ spec:
             memory: "128Mi"
             cpu: "10m"
       - name: cosmoshub-test-stargate-e
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
           - name: rpc
             value: "http://162.222.177.241:26657"
@@ -114,7 +114,7 @@ spec:
             memory: "128Mi"
             cpu: "10m"
       - name: cosmoshub-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
           - name: rpc
             value: "http://13.209.59.177:26657"
@@ -137,7 +137,7 @@ spec:
             memory: "128Mi"
             cpu: "10m"
       - name: musselnet-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
           - name: rpc
             value: "http://188.34.187.55:26657"
