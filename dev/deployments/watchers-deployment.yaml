@@ -140,7 +140,7 @@ spec:
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
           - name: rpc
-            value: "http://188.34.187.55:26657/"
+            value: "http://188.34.187.55:26657"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
