@@ -137,7 +137,7 @@ spec:
             memory: "128Mi"
             cpu: "10m"
       - name: musselnet-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
           - name: rpc
             value: "http://188.34.187.55:26657"
