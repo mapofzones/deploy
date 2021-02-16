@@ -21,8 +21,8 @@ spec:
         app: watchers-app
     spec:
       containers:
-      - name: regen-devnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:1e4b0398
+      - name: regen-devnet-3
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:091dc983
         env:
           - name: rpc
             value: "http://18.220.101.192:26657"
@@ -41,11 +41,11 @@ spec:
           requests:
             memory: "30Mi"
             cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
       - name: stargate-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:1e4b0398
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:091dc983
         env:
           - name: rpc
             value: "http://34.123.30.100:26657"
@@ -64,6 +64,6 @@ spec:
           requests:
             memory: "30Mi"
             cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
