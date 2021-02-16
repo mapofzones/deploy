@@ -43,7 +43,7 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "10m"
+            cpu: "100m"
       - name: aplikigo-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
@@ -66,7 +66,7 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "10m"
+            cpu: "100m"
       - name: stargate-4
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
@@ -89,7 +89,7 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "10m"
+            cpu: "100m"
       - name: cosmoshub-test-stargate-e
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
@@ -112,7 +112,7 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "10m"
+            cpu: "100m"
       - name: cosmoshub-3
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
@@ -135,7 +135,7 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "10m"
+            cpu: "100m"
       - name: musselnet-3
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
@@ -158,4 +158,4 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "10m"
+            cpu: "100m"
