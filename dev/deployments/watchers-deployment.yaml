@@ -37,13 +37,13 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-#        resources:
-#          requests:
-#            memory: "30Mi"
-#            cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "10m"
       - name: aplikigo-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
         env:
@@ -60,13 +60,13 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-#        resources:
-#          requests:
-#            memory: "128Mi"
-#            cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "10m"
       - name: stargate-4
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
@@ -83,13 +83,13 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-#        resources:
-#          requests:
-#            memory: "30Mi"
-#            cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "10m"
       - name: cosmoshub-test-stargate-e
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
@@ -107,12 +107,12 @@ spec:
                 key: db_graphql
         imagePullPolicy: Always
         resources:
-#          requests:
-#            memory: "30Mi"
-#            cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "10m"
       - name: cosmoshub-3
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
@@ -129,13 +129,13 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-#        resources:
-#          requests:
-#            memory: "30Mi"
-#            cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "10m"
       - name: musselnet-3
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
@@ -152,10 +152,10 @@ spec:
                 name: devsecret
                 key: db_graphql
         imagePullPolicy: Always
-#        resources:
-#          requests:
-#            memory: "30Mi"
-#            cpu: "5m"
-        #   limits:
-        #     memory: "256Mi"
-        #     cpu: "500m"
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "10m"
