@@ -9,6 +9,7 @@ spec:
   selector:
     matchLabels:
       app: watchers-app
+
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -20,6 +21,10 @@ spec:
       labels:
         app: watchers-app
     spec:
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
       containers:
       - name: regen-devnet-3
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:091dc983
