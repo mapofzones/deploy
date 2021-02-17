@@ -27,7 +27,7 @@ spec:
         - "api.mapofzones.com"
       containers:
       - name: regen-devnet-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:091dc983
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:03494cfd
         env:
           - name: rpc
             value: "http://18.220.101.192:26657"
@@ -48,9 +48,9 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "100m"
+            cpu: "250m"
       - name: stargate-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:091dc983
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:03494cfd
         env:
           - name: rpc
             value: "http://34.123.30.100:26657"
@@ -71,9 +71,9 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "100m"
+            cpu: "250m"
       - name: musselnet-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:091dc983
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:03494cfd
         env:
           - name: rpc
             value: "http://188.34.187.55:26657"
@@ -94,9 +94,9 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "100m"
+            cpu: "250m"
       - name: aplikigo-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:091dc983
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:03494cfd
         env:
           - name: rpc
             value: "http://46.101.95.106:26658"
@@ -117,4 +117,4 @@ spec:
             cpu: "5m"
           limits:
             memory: "128Mi"
-            cpu: "100m"
+            cpu: "250m"
