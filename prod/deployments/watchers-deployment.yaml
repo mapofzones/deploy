@@ -168,7 +168,7 @@ spec:
       #       cpu: "250m"
 
       - name: cosmoshub-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:5e5e77c5
+        image: registry.digitalocean.com/mapofzones/hackatom-cosmos-watcher:7f12ab48
         env:
           - name: rpc
             value: "http://23.90.70.41:26657"
