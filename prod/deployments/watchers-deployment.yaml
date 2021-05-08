@@ -171,7 +171,7 @@ spec:
         image: registry.digitalocean.com/mapofzones/hackatom-cosmos-watcher:75cfb11d
         env:
           - name: rpc
-            value: "http://23.90.70.41:26657"
+            value: "http://144.76.61.201:26657"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
