@@ -21,11 +21,103 @@ spec:
         app: watchers-app
     spec:
       containers:
-      - name: regen-devnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
+      # - name: regen-devnet-2
+      #   image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
+      #   env:
+      #     - name: rpc
+      #       value: "http://46.101.95.106:26657"
+      #     - name: rabbitmq
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: watcher_rabbitmq
+      #     - name: graphql
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: db_graphql
+      #   imagePullPolicy: Always
+      #   resources:
+      #     requests:
+      #       memory: "30Mi"
+      #       cpu: "5m"
+      #     limits:
+      #       memory: "128Mi"
+      #       cpu: "100m"
+      # - name: aplikigo-1
+      #   image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+      #   env:
+      #     - name: rpc
+      #       value: "http://46.101.95.106:26658"
+      #     - name: rabbitmq
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: watcher_rabbitmq
+      #     - name: graphql
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: db_graphql
+      #   imagePullPolicy: Always
+      #   resources:
+      #     requests:
+      #       memory: "128Mi"
+      #       cpu: "5m"
+      #     limits:
+      #       memory: "128Mi"
+      #       cpu: "100m"
+      # - name: stargate-4
+      #   image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
+      #   env:
+      #     - name: rpc
+      #       value: "http://34.123.30.100:26657"
+      #     - name: rabbitmq
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: watcher_rabbitmq
+      #     - name: graphql
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: db_graphql
+      #   imagePullPolicy: Always
+      #   resources:
+      #     requests:
+      #       memory: "30Mi"
+      #       cpu: "5m"
+      #     limits:
+      #       memory: "128Mi"
+      #       cpu: "100m"
+      # - name: cosmoshub-test-stargate-e
+      #   image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
+      #   env:
+      #     - name: rpc
+      #       value: "http://162.222.177.241:26657"
+      #     - name: rabbitmq
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: watcher_rabbitmq
+      #     - name: graphql
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: db_graphql
+      #   imagePullPolicy: Always
+      #   resources:
+      #     requests:
+      #       memory: "30Mi"
+      #       cpu: "5m"
+      #     limits:
+      #       memory: "128Mi"
+      #       cpu: "100m"
+      - name: cosmoshub-4
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:514e591b
         env:
-          - name: rpc
-            value: "http://46.101.95.106:26657"
+          - name: chain_id
+            value: "cosmoshub-4"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
@@ -44,141 +136,49 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "100m"
-      - name: aplikigo-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
-        env:
-          - name: rpc
-            value: "http://46.101.95.106:26658"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "5m"
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
-      - name: stargate-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
-        env:
-          - name: rpc
-            value: "http://34.123.30.100:26657"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
-      - name: cosmoshub-test-stargate-e
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
-        env:
-          - name: rpc
-            value: "http://162.222.177.241:26657"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
-      - name: cosmoshub-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dev:latest
-        env:
-          - name: rpc
-            value: "http://13.209.59.177:26657"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
-      - name: musselnet-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
-        env:
-          - name: rpc
-            value: "http://188.34.187.55:26657"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
-      - name: stargate-final
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:03494cfd
-        env:
-          - name: rpc
-            value: "http://188.34.177.78:26657"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: devsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "30Mi"
-            cpu: "5m"
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
+      # - name: musselnet-3
+      #   image: registry.digitalocean.com/mapofzones/cosmos-watcher:514e591b
+      #   env:
+      #     - name: rpc
+      #       value: "http://188.34.187.55:26657"
+      #     - name: rabbitmq
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: watcher_rabbitmq
+      #     - name: graphql
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: db_graphql
+      #   imagePullPolicy: Always
+      #   resources:
+      #     requests:
+      #       memory: "30Mi"
+      #       cpu: "5m"
+      #     limits:
+      #       memory: "128Mi"
+      #       cpu: "100m"
+      # - name: stargate-final
+      #   image: registry.digitalocean.com/mapofzones/cosmos-watcher:514e591b
+      #   env:
+      #     - name: rpc
+      #       value: "http://188.34.177.78:26657"
+      #     - name: rabbitmq
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: watcher_rabbitmq
+      #     - name: graphql
+      #       valueFrom:
+      #         secretKeyRef:
+      #           name: devsecret
+      #           key: db_graphql
+      #   imagePullPolicy: Always
+      #   resources:
+      #     requests:
+      #       memory: "30Mi"
+      #       cpu: "5m"
+      #     limits:
+      #       memory: "128Mi"
+      #       cpu: "100m"
