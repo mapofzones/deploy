@@ -1,94 +1,94 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: watchers-deploy
-#   labels:
-#     app: watchers-app
-#   annotations:
-# spec:
-#   selector:
-#     matchLabels:
-#       app: watchers-app
-#   replicas: 1
-#   strategy:
-#     type: RollingUpdate
-#     rollingUpdate:
-#       maxSurge: 2
-#       maxUnavailable: 0
-#   template:
-#     metadata:
-#       labels:
-#         app: watchers-app
-#     spec:
-#       containers:
-#       - name: cosmoshub-4
-#         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
-#         env:
-#           - name: chain_id
-#             value: "cosmoshub-4"
-#           - name: rabbitmq
-#             valueFrom:
-#               secretKeyRef:
-#                 name: devsecret
-#                 key: watcher_rabbitmq
-#           - name: graphql
-#             valueFrom:
-#               secretKeyRef:
-#                 name: devsecret
-#                 key: db_graphql
-#         imagePullPolicy: Always
-#         resources:
-#           requests:
-#             memory: "30Mi"
-#             cpu: "5m"
-#           limits:
-#             memory: "75Mi"
-#             cpu: "100m"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: watchers-deploy
+  labels:
+    app: watchers-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: watchers-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: watchers-app
+    spec:
+      containers:
+      - name: cosmoshub-4
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        env:
+          - name: chain_id
+            value: "cosmoshub-4"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "75Mi"
+            cpu: "100m"
 
-#       - name: akashnet-2
-#         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
-#         env:
-#           - name: chain_id
-#             value: "akashnet-2"
-#           - name: rabbitmq
-#             valueFrom:
-#               secretKeyRef:
-#                 name: devsecret
-#                 key: watcher_rabbitmq
-#           - name: graphql
-#             valueFrom:
-#               secretKeyRef:
-#                 name: devsecret
-#                 key: db_graphql
-#         imagePullPolicy: Always
-#         resources:
-#           requests:
-#             memory: "30Mi"
-#             cpu: "5m"
-#           limits:
-#             memory: "75Mi"
-#             cpu: "100m"
+      - name: akashnet-2
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        env:
+          - name: chain_id
+            value: "akashnet-2"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "75Mi"
+            cpu: "100m"
 
-#       - name: irishub-1
-#         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
-#         env:
-#           - name: chain_id
-#             value: "irishub-1"
-#           - name: rabbitmq
-#             valueFrom:
-#               secretKeyRef:
-#                 name: devsecret
-#                 key: watcher_rabbitmq
-#           - name: graphql
-#             valueFrom:
-#               secretKeyRef:
-#                 name: devsecret
-#                 key: db_graphql
-#         imagePullPolicy: Always
-#         resources:
-#           requests:
-#             memory: "30Mi"
-#             cpu: "5m"
-#           limits:
-#             memory: "75Mi"
-#             cpu: "100m"
+      - name: irishub-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        env:
+          - name: chain_id
+            value: "irishub-1"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "75Mi"
+            cpu: "100m"
