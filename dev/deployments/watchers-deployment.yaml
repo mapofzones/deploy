@@ -117,7 +117,7 @@ spec:
             memory: "75Mi"
             cpu: "100m"
 
-      - name: core-1(persistence)
+      - name: persistence-core-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
         env:
           - name: chain_id
