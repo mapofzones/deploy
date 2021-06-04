@@ -168,7 +168,7 @@ spec:
       #       cpu: "250m"
 
       - name: cosmoshub-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:514e591b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:ce06dafd
         env:
           - name: chain_id
             value: "cosmoshub-4"
@@ -192,7 +192,7 @@ spec:
             cpu: "250m"
 
       - name: irishub-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:85f20428
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:ce06dafd
         env:
           - name: chain_id
             value: "irishub-1"
@@ -216,7 +216,7 @@ spec:
             cpu: "250m"
 
       - name: akashnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:49726cc5
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:ce06dafd
         env:
           - name: chain_id
             value: "akashnet-2"
