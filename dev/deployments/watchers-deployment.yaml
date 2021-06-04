@@ -116,3 +116,27 @@ spec:
           limits:
             memory: "75Mi"
             cpu: "100m"
+
+      - name: core-1(persistence)
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        env:
+          - name: chain_id
+            value: "core-1"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "75Mi"
+            cpu: "100m"
