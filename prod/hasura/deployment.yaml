@@ -13,6 +13,16 @@ spec:
       labels:
         app: hasura
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - hasura
+            topologyKey: "kubernetes.io/hostname"
       containers:
       - name: hasura
         image: hasura/graphql-engine:v1.3.3
