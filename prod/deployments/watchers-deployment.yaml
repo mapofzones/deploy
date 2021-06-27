@@ -28,7 +28,7 @@ spec:
       containers:
 
       - name: cosmoshub-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:32a52269
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
         env:
           - name: chain_id
             value: "cosmoshub-4"
@@ -52,7 +52,7 @@ spec:
             cpu: "250m"
 
       - name: irishub-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:32a52269
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
         env:
           - name: chain_id
             value: "irishub-1"
@@ -76,7 +76,7 @@ spec:
             cpu: "250m"
 
       - name: akashnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:32a52269
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
         env:
           - name: chain_id
             value: "akashnet-2"
@@ -100,7 +100,7 @@ spec:
             cpu: "250m"
 
       - name: sentinelhub-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:32a52269
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
         env:
           - name: chain_id
             value: "sentinelhub-2"
@@ -124,7 +124,7 @@ spec:
             cpu: "250m"
 
       - name: persistence-core-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:32a52269
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
         env:
           - name: chain_id
             value: "core-1"
@@ -148,7 +148,7 @@ spec:
             cpu: "250m"
 
       - name: osmosis-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:d348a791
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
         env:
           - name: chain_id
             value: "osmosis-1"
