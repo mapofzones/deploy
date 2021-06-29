@@ -165,8 +165,8 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "30Mi"
+            memory: "70Mi"
             cpu: "5m"
           limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "250m"
