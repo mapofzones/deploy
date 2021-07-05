@@ -124,7 +124,7 @@ spec:
             cpu: "250m"
 
       - name: persistence-core-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0e8a510d
         env:
           - name: chain_id
             value: "core-1"
