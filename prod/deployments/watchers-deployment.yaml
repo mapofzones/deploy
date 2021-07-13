@@ -48,7 +48,7 @@ spec:
             memory: "70Mi"
             cpu: "20m"
           limits:
-            memory: "256Mi"
+            memory: "512Mi"
             cpu: "250m"
 
       - name: irishub-1
