@@ -166,10 +166,10 @@ spec:
         resources:
           requests:
             memory: "512Mi"
-            cpu: "100m"
+            cpu: "500m"
           limits:
             memory: "512Mi"
-            cpu: "250m"
+            cpu: "1000m"
 
       - name: crypto-org-chain-mainnet-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher:0e8a510d
