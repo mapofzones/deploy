@@ -168,7 +168,7 @@ spec:
             memory: "512Mi"
             cpu: "500m"
           limits:
-            memory: "512Mi"
+            memory: "2048Mi"
             cpu: "1000m"
 
       - name: crypto-org-chain-mainnet-1
