@@ -172,7 +172,7 @@ spec:
             cpu: "1000m"
 
       - name: crypto-org-chain-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0e8a510d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:3a593c4a
         env:
           - name: chain_id
             value: "crypto-org-chain-mainnet-1"
