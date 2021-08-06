@@ -194,3 +194,27 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "250m"
+
+      - name: starname-iov-mainnet-ibc
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-starname:8e279032
+        env:
+          - name: chain_id
+            value: "iov-mainnet-ibc"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "150Mi"
+            cpu: "30m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
