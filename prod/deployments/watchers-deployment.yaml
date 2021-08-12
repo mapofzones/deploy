@@ -28,7 +28,7 @@ spec:
       containers:
 
       - name: cosmoshub-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cosmoshub:81ca5120
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cosmoshub:edf5cc25
         env:
           - name: chain_id
             value: "cosmoshub-4"
@@ -52,7 +52,7 @@ spec:
             cpu: "250m"
 
       - name: irishub-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-irishub:9656edb0
         env:
           - name: chain_id
             value: "irishub-1"
@@ -76,7 +76,7 @@ spec:
             cpu: "250m"
 
       - name: akashnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-akash:6d4472e0
         env:
           - name: chain_id
             value: "akashnet-2"
@@ -100,7 +100,7 @@ spec:
             cpu: "250m"
 
       - name: sentinelhub-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0a158b32
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sentinelhub:e9fe35c9
         env:
           - name: chain_id
             value: "sentinelhub-2"
@@ -124,7 +124,7 @@ spec:
             cpu: "250m"
 
       - name: persistence-core-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:0e8a510d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-persistence:3fc2ac63
         env:
           - name: chain_id
             value: "core-1"
@@ -148,7 +148,7 @@ spec:
             cpu: "250m"
 
       - name: osmosis-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:46c6ce1d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:09b2a43d
         env:
           - name: chain_id
             value: "osmosis-1"
@@ -172,7 +172,7 @@ spec:
             cpu: "1000m"
 
       - name: crypto-org-chain-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:3a593c4a
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:6a63d7a5
         env:
           - name: chain_id
             value: "crypto-org-chain-mainnet-1"
@@ -196,7 +196,7 @@ spec:
             cpu: "250m"
 
       - name: starname-iov-mainnet-ibc
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-starname:8e279032
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-starname:7f39e5aa
         env:
           - name: chain_id
             value: "iov-mainnet-ibc"
@@ -220,7 +220,7 @@ spec:
             cpu: "250m"
 
       - name: regen-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:7b0f2175
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:4d07b8d2
         env:
           - name: chain_id
             value: "regen-1"
