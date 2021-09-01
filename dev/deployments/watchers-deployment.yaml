@@ -46,7 +46,7 @@ spec:
             cpu: "100m"
 
       - name: akashnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-akash:latest
         env:
           - name: chain_id
             value: "akashnet-2"
