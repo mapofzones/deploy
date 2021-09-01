@@ -70,7 +70,7 @@ spec:
             cpu: "100m"
 
       - name: irishub-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-irishub:latest
         env:
           - name: chain_id
             value: "irishub-1"
