@@ -94,7 +94,7 @@ spec:
             cpu: "100m"
 
       - name: sentinelhub-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher:latest
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sentinelhub:latest
         env:
           - name: chain_id
             value: "sentinelhub-2"
