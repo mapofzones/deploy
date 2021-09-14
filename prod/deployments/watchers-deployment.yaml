@@ -148,7 +148,7 @@ spec:
             cpu: "250m"
 
       - name: osmosis-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:09b2a43d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:2a624464
         env:
           - name: chain_id
             value: "osmosis-1"
