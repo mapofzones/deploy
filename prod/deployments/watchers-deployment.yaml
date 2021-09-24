@@ -243,6 +243,30 @@ spec:
             memory: "256Mi"
             cpu: "250m"
 
+      - name: sifchain-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sifchain:3588066f
+        env:
+          - name: chain_id
+            value: "sifchain-1"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "150Mi"
+            cpu: "30m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+
       # - name: cronostestnet-338
       #   image: registry.digitalocean.com/mapofzones/cosmos-watcher-cronos:95c7d6e5
       #   env:
