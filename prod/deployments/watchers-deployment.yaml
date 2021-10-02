@@ -363,7 +363,7 @@ spec:
             memory: "256Mi"
             cpu: "250m"
 
-      - name: terra(columbus-5)
+      - name: terra-columbus-5
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra:6aeb482b
         env:
           - name: chain_id
