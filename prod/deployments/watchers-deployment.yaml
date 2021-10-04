@@ -363,30 +363,6 @@ spec:
             memory: "256Mi"
             cpu: "250m"
 
-      - name: terra-columbus-5
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra:6aeb482b
-        env:
-          - name: chain_id
-            value: "columbus-5"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "1000Mi"
-            cpu: "150m"
-          limits:
-            memory: "2048Mi"
-            cpu: "500m"
-
       - name: bitcanna-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-bitcanna:b40f2d7b
         env:
