@@ -27,30 +27,6 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: cosmoshub-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cosmoshub:edf5cc25
-        env:
-          - name: chain_id
-            value: "cosmoshub-4"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "70Mi"
-            cpu: "20m"
-          limits:
-            memory: "512Mi"
-            cpu: "250m"
-
       - name: irishub-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-irishub:9656edb0
         env:
