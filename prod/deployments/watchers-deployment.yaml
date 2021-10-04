@@ -27,30 +27,6 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: impacthub-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-impacthub:265381f2
-        env:
-          - name: chain_id
-            value: "impacthub-3"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "150Mi"
-            cpu: "30m"
-          limits:
-            memory: "256Mi"
-            cpu: "250m"
-
       - name: juno-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:12579e36
         env:
