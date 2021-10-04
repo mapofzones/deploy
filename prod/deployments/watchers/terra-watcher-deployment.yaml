@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: terra-watcher-deploy
+  labels:
+    app: terra-watcher-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: terra-watcher-app
+
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: terra-watcher-app
+    spec:
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
+      containers:
+
+      - name: terra-columbus-5
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra:6aeb482b
+        env:
+          - name: chain_id
+            value: "columbus-5"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1000Mi"
+            cpu: "150m"
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"
