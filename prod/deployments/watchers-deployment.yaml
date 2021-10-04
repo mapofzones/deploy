@@ -27,30 +27,6 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: emoney-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-emoney:c43c6dc7
-        env:
-          - name: chain_id
-            value: "emoney-3"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "150Mi"
-            cpu: "30m"
-          limits:
-            memory: "256Mi"
-            cpu: "250m"
-
       - name: microtick-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-microtick:9279d9f9
         env:
