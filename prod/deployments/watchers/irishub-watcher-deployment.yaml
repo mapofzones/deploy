@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: irishub-watcher-deploy
+  labels:
+    app: irishub-watcher-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: irishub-watcher-app
+
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: irishub-watcher-app
+    spec:
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
+      containers:
+
+      - name: irishub-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-irishub:9656edb0
+        env:
+          - name: chain_id
+            value: "irishub-1"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "30Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
