@@ -27,30 +27,6 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: starname-iov-mainnet-ibc
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-starname:7f39e5aa
-        env:
-          - name: chain_id
-            value: "iov-mainnet-ibc"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "150Mi"
-            cpu: "30m"
-          limits:
-            memory: "256Mi"
-            cpu: "250m"
-
       - name: regen-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:4d07b8d2
         env:
