@@ -27,30 +27,6 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: regen-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:4d07b8d2
-        env:
-          - name: chain_id
-            value: "regen-1"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "150Mi"
-            cpu: "30m"
-          limits:
-            memory: "256Mi"
-            cpu: "250m"
-
       - name: sifchain-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-sifchain:9a818fc4
         env:
