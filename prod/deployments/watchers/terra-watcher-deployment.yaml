@@ -17,6 +17,10 @@ spec:
       maxSurge: 2
       maxUnavailable: 0
   template:
+    metadata:
+      labels:
+        app: terra-watcher-app
+    spec:
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -27,10 +31,6 @@ spec:
                 values:
                 - terra-watcher-app
             topologyKey: "kubernetes.io/hostname"
-    metadata:
-      labels:
-        app: terra-watcher-app
-    spec:
       hostAliases:
       - ip: "159.89.250.255"
         hostnames:
