@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: akashnet-watcher-app
 
-  replicas: 3
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
