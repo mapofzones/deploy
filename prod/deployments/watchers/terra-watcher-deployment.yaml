@@ -17,16 +17,16 @@ spec:
       maxSurge: 2
       maxUnavailable: 0
   template:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - terra-watcher-app
-            topologyKey: "kubernetes.io/hostname"
+      # affinity:
+      #   podAntiAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #     - labelSelector:
+      #         matchExpressions:
+      #         - key: app
+      #           operator: In
+      #           values:
+      #           - terra-watcher-app
+      #       topologyKey: "kubernetes.io/hostname"
     metadata:
       labels:
         app: terra-watcher-app
