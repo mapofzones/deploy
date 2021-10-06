@@ -21,6 +21,16 @@ spec:
       labels:
         app: akashnet-watcher-app
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - akashnet-watcher-app
+            topologyKey: "kubernetes.io/hostname"
       hostAliases:
       - ip: "159.89.250.255"
         hostnames:
