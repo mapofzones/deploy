@@ -21,6 +21,16 @@ spec:
       labels:
         app: irishub-watcher-app
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - irishub-watcher-app
+            topologyKey: "kubernetes.io/hostname"
       hostAliases:
       - ip: "159.89.250.255"
         hostnames:
