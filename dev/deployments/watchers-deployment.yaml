@@ -188,3 +188,27 @@ spec:
       #     limits:
       #       memory: "75Mi"
       #       cpu: "100m"
+
+      - name: cyber-bostrom-testnet-7
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cyber:5eb23900
+        env:
+          - name: chain_id
+            value: "bostrom-testnet-7"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: devsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "130Mi"
+            cpu: "50m"
+          limits:
+            memory: "275Mi"
+            cpu: "100m"
