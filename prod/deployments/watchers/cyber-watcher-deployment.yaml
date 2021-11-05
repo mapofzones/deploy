@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cyber-watcher-deploy
+  labels:
+    app: cyber-watcher-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: cyber-watcher-app
+
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: cyber-watcher-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - cyber-watcher-app
+            topologyKey: "kubernetes.io/hostname"
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
+      containers:
+
+      - name: cyber-bostrom
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cyber:5eb23900
+        env:
+          - name: chain_id
+            value: "bostrom"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "150Mi"
+            cpu: "30m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
