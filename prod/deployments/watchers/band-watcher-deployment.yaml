@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: band-laozi-mainnet
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-band:f0b7f9fb
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-band:514d521b
         env:
           - name: chain_id
             value: "laozi-mainnet"
