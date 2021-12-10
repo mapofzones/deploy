@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: endpoint-checker
-        image: registry.digitalocean.com/mapofzones/endpoint-checker:cc3dc6a9
+        image: registry.digitalocean.com/mapofzones/endpoint-checker:c828d4d5
         env:
           - name: DB_URL
             valueFrom:
