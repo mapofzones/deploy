@@ -37,7 +37,7 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: cronosmainnet_25-1
+      - name: cronosmainnet-25-1
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-cronos:7bec3b06
         env:
           - name: chain_id
