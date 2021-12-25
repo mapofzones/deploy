@@ -1,49 +1,49 @@
-#apiVersion: apps/v1
-#kind: Deployment
-#metadata:
-#  name: endpoint-checker-deploy
-#  labels:
-#    app: endpoint-checker-app
-#  annotations:
-#spec:
-#  selector:
-#    matchLabels:
-#      app: endpoint-checker-app
-#  replicas: 1
-#  strategy:
-#    type: RollingUpdate
-#    rollingUpdate:
-#      maxSurge: 1
-#      maxUnavailable: 0
-#  template:
-#    metadata:
-#      labels:
-#        app: endpoint-checker-app
-#    spec:
-#      containers:
-#      - name: endpoint-checker
-#        image: registry.digitalocean.com/mapofzones/endpoint-checker:c828d4d5
-#        env:
-#          - name: DB_URL
-#            valueFrom:
-#              secretKeyRef:
-#                name: prodsecret
-#                key: endpoint-checker_DB_URL
-#          - name: DB_USER
-#            valueFrom:
-#              secretKeyRef:
-#                name: prodsecret
-#                key: endpoint-checker_DB_USER
-#          - name: DB_PASS
-#            valueFrom:
-#              secretKeyRef:
-#                name: prodsecret
-#                key: endpoint-checker_DB_PASS
-#        imagePullPolicy: Always
-#        resources:
-#          requests:
-#            memory: "100Mi"
-#            cpu: "50m"
-#          limits:
-#            memory: "256Mi"
-#            cpu: "500m"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: endpoint-checker-deploy
+  labels:
+    app: endpoint-checker-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: endpoint-checker-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: endpoint-checker-app
+    spec:
+      containers:
+      - name: endpoint-checker
+        image: registry.digitalocean.com/mapofzones/endpoint-checker:c828d4d5
+        env:
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: endpoint-checker_DB_URL
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: endpoint-checker_DB_USER
+          - name: DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: endpoint-checker_DB_PASS
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
