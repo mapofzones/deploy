@@ -39,6 +39,18 @@ spec:
               secretKeyRef:
                 name: devsecret
                 key: endpoint-checker_DB_PASS
+          - name: TM_SYNC_TIME
+            value: "120s"
+          - name: TM_THREADS
+            value: "2"
+          - name: PF_SYNC_TIME
+            value: "60s"
+          - name: PF_THREADS
+            value: "1"
+          - name: TPF_SYNC_TIME
+            value: "60s"
+          - name: TPF_THREADS
+            value: "1"
         imagePullPolicy: Always
         resources:
           requests:
