@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counterparty-channel-crawler-deploy
+  labels:
+    app: counterparty-channel-crawler-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: counterparty-channel-crawler-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: counterparty-channel-crawler-app
+    spec:
+      containers:
+      - name: counterparty-channel-crawler
+        image: registry.digitalocean.com/mapofzones/counterparty-channel-crawler:fdc72b63
+        env:
+          - name: CR_SYNC_TIME
+            value: "120s"
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: zone-height-checker_DB_URL
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: zone-height-checker_DB_USER
+          - name: DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: zone-height-checker_DB_PASS
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "126Mi"
+            cpu: "10m"
+          limits:
+            memory: "126Mi"
+            cpu: "30m"
