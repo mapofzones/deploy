@@ -22,8 +22,12 @@ spec:
     spec:
       containers:
       - name: endpoint-checker
-        image: registry.digitalocean.com/mapofzones/endpoint-checker:c828d4d5
+        image: registry.digitalocean.com/mapofzones/endpoint-checker:c2882493
         env:
+          - name: EC_SYNC_TIME
+            value: "1s"
+          - name: EC_THREADS
+            value: "100"
           - name: DB_URL
             valueFrom:
               secretKeyRef:
@@ -42,8 +46,8 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "100Mi"
-            cpu: "50m"
+            memory: "512Mi"
+            cpu: "500m"
           limits:
-            memory: "256Mi"
+            memory: "512Mi"
             cpu: "500m"
