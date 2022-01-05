@@ -22,12 +22,14 @@ spec:
     spec:
       containers:
       - name: endpoint-checker
-        image: registry.digitalocean.com/mapofzones/endpoint-checker:c2882493
+        image: registry.digitalocean.com/mapofzones/endpoint-checker:e85c2be8
         env:
+          - name: POOL_SIZE
+            value: "4"
           - name: EC_SYNC_TIME
             value: "1s"
           - name: EC_THREADS
-            value: "100"
+            value: "8"
           - name: DB_URL
             valueFrom:
               secretKeyRef:
