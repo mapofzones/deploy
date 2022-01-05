@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: adaptor
-        image: registry.digitalocean.com/mapofzones/stats-adaptor:04dee4b5
+        image: registry.digitalocean.com/mapofzones/stats-adaptor:8ee230f6
         env:
           - name: DB_URL
             valueFrom:
@@ -43,7 +43,7 @@ spec:
         resources:
           requests:
             memory: "200Mi"
-            cpu: "50m"
+            cpu: "100m"
           limits:
             memory: "256Mi"
             cpu: "500m"
