@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: counterparty-channel-crawler
-        image: registry.digitalocean.com/mapofzones/counterparty-channel-crawler:e3d4cbca
+        image: registry.digitalocean.com/mapofzones/counterparty-channel-crawler:35fb3602
         env:
           - name: CR_SYNC_TIME
             value: "120s"
