@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: token-matcher
-        image: registry.digitalocean.com/mapofzones/token-matcher:87363968
+        image: registry.digitalocean.com/mapofzones/token-matcher:de02354b
         env:
           - name: DB_URL
             valueFrom:
