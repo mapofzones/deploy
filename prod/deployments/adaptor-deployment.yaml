@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: adaptor
-        image: registry.digitalocean.com/mapofzones/stats-adaptor:08b4dadd
+        image: registry.digitalocean.com/mapofzones/stats-adaptor:93f548be
         env:
           - name: DB_URL
             valueFrom:
