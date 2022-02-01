@@ -1,62 +1,62 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: lum-watcher-deploy
-  labels:
-    app: lum-watcher-app
-  annotations:
-spec:
-  selector:
-    matchLabels:
-      app: lum-watcher-app
-
-  replicas: 2
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 2
-      maxUnavailable: 0
-  template:
-    metadata:
-      labels:
-        app: lum-watcher-app
-    spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - lum-watcher-app
-            topologyKey: "kubernetes.io/hostname"
-      hostAliases:
-      - ip: "159.89.250.255"
-        hostnames:
-        - "api.mapofzones.com"
-      containers:
-
-      - name: lum-network-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-lum:0cc03f8e
-        env:
-          - name: chain_id
-            value: "lum-network-1"
-          - name: rabbitmq
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: watcher_rabbitmq
-          - name: graphql
-            valueFrom:
-              secretKeyRef:
-                name: prodsecret
-                key: db_graphql
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "150Mi"
-            cpu: "30m"
-          limits:
-            memory: "256Mi"
-            cpu: "250m"
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: lum-watcher-deploy
+#  labels:
+#    app: lum-watcher-app
+#  annotations:
+#spec:
+#  selector:
+#    matchLabels:
+#      app: lum-watcher-app
+#
+#  replicas: 2
+#  strategy:
+#    type: RollingUpdate
+#    rollingUpdate:
+#      maxSurge: 2
+#      maxUnavailable: 0
+#  template:
+#    metadata:
+#      labels:
+#        app: lum-watcher-app
+#    spec:
+#      affinity:
+#        podAntiAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#          - labelSelector:
+#              matchExpressions:
+#              - key: app
+#                operator: In
+#                values:
+#                - lum-watcher-app
+#            topologyKey: "kubernetes.io/hostname"
+#      hostAliases:
+#      - ip: "159.89.250.255"
+#        hostnames:
+#        - "api.mapofzones.com"
+#      containers:
+#
+#      - name: lum-network-1
+#        image: registry.digitalocean.com/mapofzones/cosmos-watcher-lum:0cc03f8e
+#        env:
+#          - name: chain_id
+#            value: "lum-network-1"
+#          - name: rabbitmq
+#            valueFrom:
+#              secretKeyRef:
+#                name: prodsecret
+#                key: watcher_rabbitmq
+#          - name: graphql
+#            valueFrom:
+#              secretKeyRef:
+#                name: prodsecret
+#                key: db_graphql
+#        imagePullPolicy: Always
+#        resources:
+#          requests:
+#            memory: "150Mi"
+#            cpu: "30m"
+#          limits:
+#            memory: "256Mi"
+#            cpu: "250m"
