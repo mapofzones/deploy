@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: endpoint-checker
-        image: registry.digitalocean.com/mapofzones/endpoint-checker:4f42b525
+        image: registry.digitalocean.com/mapofzones/endpoint-checker:a803382b
         env:
           - name: POOL_SIZE
             value: "1"
