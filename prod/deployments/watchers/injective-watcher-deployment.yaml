@@ -38,7 +38,7 @@
        containers:
 
        - name: injective-1
-         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective:fa821785
+         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective:b1925cf8
          env:
            - name: chain_id
              value: "injective-1"
