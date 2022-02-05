@@ -30,6 +30,8 @@ spec:
             value: "1s"
           - name: EC_THREADS
             value: "100"
+          - name: EC_PAGE_SIZE
+            value: "1000"
           - name: DB_URL
             valueFrom:
               secretKeyRef:
