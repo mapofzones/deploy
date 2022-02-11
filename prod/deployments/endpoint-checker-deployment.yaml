@@ -29,9 +29,9 @@ spec:
           - name: EC_SYNC_TIME
             value: "1s"
           - name: EC_THREADS
-            value: "500"
+            value: "100"
           - name: EC_PAGE_SIZE
-            value: "500"
+            value: "300"
           - name: DB_URL
             valueFrom:
               secretKeyRef:
