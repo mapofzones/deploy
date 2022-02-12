@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: stargaze-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stargaze:6b8ea648
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stargaze:343f7b22
         env:
           - name: chain_id
             value: "stargaze-1"
