@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: crypto-org-chain-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:8ea3e41d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:02da013c
         env:
           - name: chain_id
             value: "crypto-org-chain-mainnet-1"
