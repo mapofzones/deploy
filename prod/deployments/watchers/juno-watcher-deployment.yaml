@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: juno-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:f90f95b3
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:56db83d2
         env:
           - name: chain_id
             value: "juno-1"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
