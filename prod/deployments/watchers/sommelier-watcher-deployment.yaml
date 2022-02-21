@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: sommelier-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sommelier:08728394
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sommelier:c6a1934e
         env:
           - name: chain_id
             value: "sommelier-3"
