@@ -38,7 +38,7 @@
        containers:
 
        - name: injective-1
-         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective:1ab65906
+         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective:e9b66ba1
          env:
            - name: chain_id
              value: "injective-1"
@@ -52,6 +52,8 @@
                secretKeyRef:
                  name: prodsecret
                  key: db_graphql
+           - name: queue
+             value: "blocks_v3"
          imagePullPolicy: Always
          resources:
            requests:
