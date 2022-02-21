@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: konstellation-darchub
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-konstellation:40bab3d9
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-konstellation:54e10783
         env:
           - name: chain_id
             value: "darchub"
