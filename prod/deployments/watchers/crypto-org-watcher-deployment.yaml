@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: crypto-org-chain-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:f3c92fdb
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:8ea3e41d
         env:
           - name: chain_id
             value: "crypto-org-chain-mainnet-1"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
