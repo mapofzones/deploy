@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: stargaze-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stargaze:343f7b22
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stargaze:77ebab6a
         env:
           - name: chain_id
             value: "stargaze-1"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
