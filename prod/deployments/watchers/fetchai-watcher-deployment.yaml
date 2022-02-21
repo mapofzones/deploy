@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: fetchhub-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-fetchai:8f74bce0
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-fetchai:5a252d6e
         env:
           - name: chain_id
             value: "fetchhub-3"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
