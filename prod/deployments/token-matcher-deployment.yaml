@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: token-matcher
-        image: registry.digitalocean.com/mapofzones/token-matcher:4a5e3aff
+        image: registry.digitalocean.com/mapofzones/token-matcher:25127492
         env:
           - name: DB_URL
             valueFrom:
@@ -54,8 +54,8 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "512Mi"
+            memory: "1024Mi"
             cpu: "500m"
           limits:
-            memory: "512Mi"
+            memory: "1024Mi"
             cpu: "500m"
