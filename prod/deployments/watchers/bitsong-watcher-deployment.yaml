@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: bitsong-2b
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bitsong:8a80a40b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bitsong:fd2e3f51
         env:
           - name: chain_id
             value: "bitsong-2b"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
