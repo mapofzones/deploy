@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: axelar-dojo-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-axelar:28a5d5d9
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-axelar:85925922
         env:
           - name: chain_id
             value: "axelar-dojo-1"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
