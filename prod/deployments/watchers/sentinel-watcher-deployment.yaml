@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: sentinelhub-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sentinelhub:e9fe35c9
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sentinelhub:93c56915
         env:
           - name: chain_id
             value: "sentinelhub-2"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
