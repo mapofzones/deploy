@@ -37,11 +37,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: fetchhub-3
+      - name: fetchhub-4
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-fetchai:d97fb81a
         env:
           - name: chain_id
-            value: "fetchhub-3"
+            value: "fetchhub-4"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
