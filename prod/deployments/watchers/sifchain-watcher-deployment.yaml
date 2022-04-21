@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: sifchain-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sifchain:d0116712
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sifchain:dbf29b3b
         env:
           - name: chain_id
             value: "sifchain-1"
