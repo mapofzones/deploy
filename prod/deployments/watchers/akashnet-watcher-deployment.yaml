@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: akashnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-akash:6d4472e0
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-akash:b86d55d0
         env:
           - name: chain_id
             value: "akashnet-2"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
