@@ -37,11 +37,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: evmos-9001-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-evmos:578c75ce
+      - name: evmos-9001-2
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-evmos:3ad4985e
         env:
           - name: chain_id
-            value: "evmos_9001-1"
+            value: "evmos_9001-2"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
