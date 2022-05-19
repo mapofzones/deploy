@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: sifchain-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sifchain:dbf29b3b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sifchain:b5af42e5
         env:
           - name: chain_id
             value: "sifchain-1"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
