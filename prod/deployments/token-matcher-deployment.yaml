@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: token-matcher
-        image: registry.digitalocean.com/mapofzones/token-matcher:ffaf9315
+        image: registry.digitalocean.com/mapofzones/token-matcher:03641b99
         env:
           - name: DB_URL
             valueFrom:
@@ -48,7 +48,7 @@ spec:
           - name: PF_THREADS
             value: "1"
           - name: TPF_SYNC_TIME
-            value: "60s"
+            value: "300s"
           - name: TPF_THREADS
             value: "1"
         imagePullPolicy: Always
