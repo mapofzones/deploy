@@ -37,11 +37,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: kava_2222-10
+      - name: kava-2222-10
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-kava:3d2124c8
         env:
           - name: chain_id
-            value: "kava_2222-10"
+            value: "kava-2222-10"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
