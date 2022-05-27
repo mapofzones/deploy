@@ -37,11 +37,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: kava-9
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kava:e6a7f094
+      - name: kava_2222-10
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kava:3d2124c8
         env:
           - name: chain_id
-            value: "kava-9"
+            value: "kava_2222-10"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
