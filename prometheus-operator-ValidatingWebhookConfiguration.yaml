@@ -1,0 +1,50 @@
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: ValidatingWebhookConfiguration
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: prometheus-operator
+      meta.helm.sh/release-namespace: prometheus-operator
+    creationTimestamp: "2020-12-06T15:09:09Z"
+    generation: 2
+    labels:
+      app: prometheus-operator-admission
+      app.kubernetes.io/managed-by: Helm
+      chart: prometheus-operator-9.3.0
+      heritage: Helm
+      release: prometheus-operator
+    name: prometheus-operator-admission
+    resourceVersion: "564839"
+    selfLink: /apis/admissionregistration.k8s.io/v1/validatingwebhookconfigurations/prometheus-operator-admission
+    uid: 4db5064d-0f73-4964-98af-494435bf6175
+  webhooks:
+  - admissionReviewVersions:
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJPRENCM3FBREFnRUNBaEJjU2Ezc0R0VklWQ1BIWnFRNHpvaXlNQW9HQ0NxR1NNNDlCQU1DTUFBd0lCY04KTWpBeE1qQTJNVFV3TkRBMVdoZ1BNakV5TURFeE1USXhOVEEwTURWYU1BQXdXVEFUQmdjcWhrak9QUUlCQmdncQpoa2pPUFFNQkJ3TkNBQVJkWGluRXRVeDhSTm11UHdIYkVLQWtNN2xuZVljelFhV1NVV2IwaGpoaHNkMkRRSklsCi9HVjJOcHlYV2xjWDJuMm15K0habTBlazRESkNQTk85SnI0Sm96Z3dOakFPQmdOVkhROEJBZjhFQkFNQ0FnUXcKRXdZRFZSMGxCQXd3Q2dZSUt3WUJCUVVIQXdFd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBS0JnZ3Foa2pPUFFRRApBZ05KQURCR0FpRUFpNmswaXA4Q2N3Zk5jemRDOUNVVXF2eXdhTHJoZlV6QUVqbGY4cjliS0RzQ0lRQ3R2YlNOCm9laUVDQUc5UnlBM2JYSVV1ME14TWFrc0huSFZId0Q3bkZic2tRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      service:
+        name: prometheus-operator-operator
+        namespace: prometheus-operator
+        path: /admission-prometheusrules/validate
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Exact
+    name: prometheusrulemutate.monitoring.coreos.com
+    namespaceSelector: {}
+    objectSelector: {}
+    rules:
+    - apiGroups:
+      - monitoring.coreos.com
+      apiVersions:
+      - '*'
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - prometheusrules
+      scope: '*'
+    sideEffects: Unknown
+    timeoutSeconds: 29
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

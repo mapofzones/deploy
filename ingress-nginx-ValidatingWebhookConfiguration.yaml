@@ -1,0 +1,48 @@
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: ValidatingWebhookConfiguration
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: nginx-ingress
+      meta.helm.sh/release-namespace: ingress-nginx
+    creationTimestamp: "2020-12-09T03:18:20Z"
+    generation: 2
+    labels:
+      app.kubernetes.io/component: admission-webhook
+      app.kubernetes.io/instance: nginx-ingress
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/version: 0.32.0
+      helm.sh/chart: ingress-nginx-2.1.0
+    name: nginx-ingress-ingress-nginx-admission
+    resourceVersion: "947828"
+    selfLink: /apis/admissionregistration.k8s.io/v1/validatingwebhookconfigurations/nginx-ingress-ingress-nginx-admission
+    uid: a5e60702-bb9e-4d85-9ccc-74b8acb47a97
+  webhooks:
+  - admissionReviewVersions:
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJPVENCMzZBREFnRUNBaEVBK0g4Y1hudzRqWi9kSEpvZkNDSEE2VEFLQmdncWhrak9QUVFEQWpBQU1DQVgKRFRJd01USXdPVEF6TVRNeE9Gb1lEekl4TWpBeE1URTFNRE14TXpFNFdqQUFNRmt3RXdZSEtvWkl6ajBDQVFZSQpLb1pJemowREFRY0RRZ0FFVDl3b0ZMVCtPRzlCdlJnUTFGczNHZzRnb3poVEhQN2dFQ013eUlrN3E0TUN1L2NTCkhOOFMrRWRuQ2tKMmRZSW9lZGd1TTVEVWJVc0hqZ05tY2VxZVpLTTRNRFl3RGdZRFZSMFBBUUgvQkFRREFnSUUKTUJNR0ExVWRKUVFNTUFvR0NDc0dBUVVGQndNQk1BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0NnWUlLb1pJemowRQpBd0lEU1FBd1JnSWhBUEtBSUxaeXg3ZjQ2cis2ZXRvUVJacExkcVh3eXovV0ZvSVp4NXpNdTZRRkFpRUF1c0FxCm5vdWEwSnhyeTk3MDVBN2ZoSi9lUzFtSzFUMFJwVzc5MUdmU3gwQT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      service:
+        name: nginx-ingress-ingress-nginx-controller-admission
+        namespace: ingress-nginx
+        path: /extensions/v1beta1/ingresses
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Exact
+    name: validate.nginx.ingress.kubernetes.io
+    namespaceSelector: {}
+    objectSelector: {}
+    rules:
+    - apiGroups:
+      - extensions
+      - networking.k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - ingresses
+      scope: '*'
+    sideEffects: Unknown
+    timeoutSeconds: 29
