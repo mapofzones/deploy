@@ -53,7 +53,7 @@
                  name: prodsecret
                  key: db_graphql
            - name: queue
-             value: "blocks_v3"
+             value: "blocks_v3_2"
          imagePullPolicy: Always
          resources:
            requests:
