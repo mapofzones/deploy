@@ -48,7 +48,7 @@ spec:
           - name: PF_THREADS
             value: "1"
           - name: TPF_SYNC_TIME
-            value: "300s"
+            value: "30s"
           - name: TPF_THREADS
             value: "1"
         imagePullPolicy: Always
