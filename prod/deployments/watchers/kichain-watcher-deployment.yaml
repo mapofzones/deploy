@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: kichain-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kichain:04f72d95
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kichain:db23bf21
         env:
           - name: chain_id
             value: "kichain-2"
@@ -52,6 +52,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: db_graphql
+          - name: queue
+            value: "blocks_v3"
         imagePullPolicy: Always
         resources:
           requests:
