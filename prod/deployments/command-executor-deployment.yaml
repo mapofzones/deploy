@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: command-executor-deploy
+  labels:
+    app: command-executor-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: command-executor-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: command-executor-app
+    spec:
+      containers:
+      - name: command-executor
+        image: registry.digitalocean.com/mapofzones/command-executor:d2769f5b
+        env:
+          - name: accesstoken
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: command-executor_ACCESS_TOKEN
+          - name: clusterid
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: command-executor_CLUSTER_ID
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
