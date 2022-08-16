@@ -24,7 +24,7 @@ spec:
       - name: zone-parameter-crawler
         image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:c5283944
         env:
-          - name: SYNC_TYME
+          - name: SYNC_TIME
             value: "1200s" # 1200s = 20 min
           - name: DB_URL
             valueFrom:
