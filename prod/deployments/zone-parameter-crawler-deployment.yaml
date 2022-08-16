@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zone-parameter-crawler-deploy
+  labels:
+    app: zone-parameter-crawler-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: zone-parameter-crawler-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: zone-parameter-crawler-app
+    spec:
+      containers:
+      - name: zone-parameter-crawler
+        image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:c5283944
+        env:
+          - name: SYNC_TYME
+            value: "1200s" # 1200s = 20 min
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: zone-height-checker_DB_URL
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: zone-height-checker_DB_USER
+          - name: DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: zone-height-checker_DB_PASS
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
