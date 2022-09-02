@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: axelar-dojo-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-axelar:c081c7d5
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-axelar:dd95fd08
         env:
           - name: chain_id
             value: "axelar-dojo-1"
