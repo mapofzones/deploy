@@ -39,7 +39,7 @@
 
        - name: injective-1
 #         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective:196ad24a
-         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective-test:327a23bc
+         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective-test:2d147d3c
          env:
            - name: chain_id
              value: "injective-1"
