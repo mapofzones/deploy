@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: sentinelhub-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sentinelhub:93c56915
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sentinelhub:3c8b255a
         env:
           - name: chain_id
             value: "sentinelhub-2"

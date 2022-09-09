@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: lum-network-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-lum:13f89c1f
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-lum:e72d6e77
         env:
           - name: chain_id
             value: "lum-network-1"

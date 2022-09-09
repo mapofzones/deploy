@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: decentr-mainnet-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-decentr:e6ad5f1a
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-decentr:d7277cbe
         env:
           - name: chain_id
             value: "mainnet-3"

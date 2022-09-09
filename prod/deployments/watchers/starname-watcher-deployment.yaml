@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: starname-iov-mainnet-ibc
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-starname:7f39e5aa
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-starname:91a04ec0
         env:
           - name: chain_id
             value: "iov-mainnet-ibc"

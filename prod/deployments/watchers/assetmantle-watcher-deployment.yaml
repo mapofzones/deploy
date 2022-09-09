@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: mantle-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-assetmantle:6cced8da
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-assetmantle:8b1a4840
         env:
           - name: chain_id
             value: "mantle-1"

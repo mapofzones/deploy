@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: cronosmainnet-25-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cronos:2b37eb55
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cronos:2ed21a03
         env:
           - name: chain_id
             value: "cronosmainnet_25-1"

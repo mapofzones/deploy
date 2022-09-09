@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: terra-columbus-5
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra:73ae0f95
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra:0cf14b47
         env:
           - name: chain_id
             value: "columbus-5"

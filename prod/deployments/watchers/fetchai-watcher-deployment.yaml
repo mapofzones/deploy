@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: fetchhub-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-fetchai:c1ec2c09
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-fetchai:02ea952d
         env:
           - name: chain_id
             value: "fetchhub-4"

@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: certik-shentu-2-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-certik:5a571278
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-certik:8cdf87bc
         env:
           - name: chain_id
             value: "shentu-2.2"

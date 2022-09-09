@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: juno-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:699836a2
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:2d4cab51
         env:
           - name: chain_id
             value: "juno-1"

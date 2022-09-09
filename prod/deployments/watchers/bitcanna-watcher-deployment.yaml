@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: bitcanna-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bitcanna:d4719f0c
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bitcanna:b75691f0
         env:
           - name: chain_id
             value: "bitcanna-1"

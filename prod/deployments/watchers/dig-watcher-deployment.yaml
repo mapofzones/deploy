@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: dig-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dig:2ebb01a0
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dig:c2ec7356
         env:
           - name: chain_id
             value: "dig-1"

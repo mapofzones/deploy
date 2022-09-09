@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: irishub-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-irishub:2366242d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-irishub:abc76a27
         env:
           - name: chain_id
             value: "irishub-1"
