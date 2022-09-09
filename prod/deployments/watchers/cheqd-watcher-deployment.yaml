@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: cheqd-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cheqd:47e40308
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cheqd:306a42de
         env:
           - name: chain_id
             value: "cheqd-mainnet-1"

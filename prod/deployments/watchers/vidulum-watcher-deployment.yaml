@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: vidulum-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-vidulum:f0aba55e
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-vidulum:dbec9f28
         env:
           - name: chain_id
             value: "vidulum-1"

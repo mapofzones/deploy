@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: impacthub-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-impacthub:98384d97
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-impacthub:881b2eb7
         env:
           - name: chain_id
             value: "impacthub-3"

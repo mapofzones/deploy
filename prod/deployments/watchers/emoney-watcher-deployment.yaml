@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: emoney-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-emoney:ddd4859b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-emoney:96cb3a09
         env:
           - name: chain_id
             value: "emoney-3"
