@@ -30,17 +30,17 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: prodsecret
-                key: zone-height-checker_DB_URL
+                key: endpoint-checker_DB_URL
           - name: DB_USER
             valueFrom:
               secretKeyRef:
                 name: prodsecret
-                key: zone-height-checker_DB_USER
+                key: endpoint-checker_DB_USER
           - name: DB_PASS
             valueFrom:
               secretKeyRef:
                 name: prodsecret
-                key: zone-height-checker_DB_PASS
+                key: endpoint-checker_DB_PASS
         imagePullPolicy: Always
         resources:
           requests:
