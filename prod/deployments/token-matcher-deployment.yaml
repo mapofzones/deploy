@@ -48,9 +48,14 @@ spec:
           - name: PF_THREADS
             value: "1"
           - name: TPF_SYNC_TIME
-            value: "30s"
+            value: "1500s"             # 1500s = 25min
           - name: TPF_THREADS
             value: "1"
+          - name: PRO_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: COINGECKO_PRO_API_KEY
         imagePullPolicy: Always
         resources:
           requests:
