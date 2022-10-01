@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: chihuahua-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-chihuahua:a6a231fd
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-chihuahua:0c57950f
         env:
           - name: chain_id
             value: "chihuahua-1"
