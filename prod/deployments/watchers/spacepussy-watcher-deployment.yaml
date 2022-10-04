@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: spacepussy
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-spacepussy:cc6bf38d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-spacepussy:b171c49a
         env:
           - name: chain_id
             value: "space-pussy"
