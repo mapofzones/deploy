@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - api.mapofzones.com
+    - api2.mapofzones.com
     secretName: test2-kubernetes-tls
   rules:
-  - host: api.mapofzones.com
+  - host: api2.mapofzones.com
     http:
       paths:
       - path: /
