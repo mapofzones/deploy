@@ -28,4 +28,3 @@ spec:
                 name: hasura2
                 port:
                   number: 80
-  ingressClassName: nginx
