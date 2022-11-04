@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: panacea-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-panacea:9dccc7dc
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-panacea:59a0e254
         env:
           - name: chain_id
             value: "panacea-3"
