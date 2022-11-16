@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: oraichain
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-oraichain:fa48f98d
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-oraichain:cac97641
         env:
           - name: chain_id
             value: "Oraichain"
