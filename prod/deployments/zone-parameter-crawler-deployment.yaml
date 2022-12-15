@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: zone-parameter-crawler
-        image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:c5283944
+        image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:latest
         env:
           - name: SYNC_TIME
             value: "1200s" # 1200s = 20 min
@@ -44,8 +44,8 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "256Mi"
+            memory: "512Mi"
             cpu: "100m"
           limits:
-            memory: "512Mi"
-            cpu: "500m"
+            memory: "1024Mi"
+            cpu: "2000m"
