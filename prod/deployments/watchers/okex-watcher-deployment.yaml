@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: okex-watcher-app
 
-  replicas: 1
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: okex-exchain-66
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-okex:825529c8
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-okex:a1530d31
         env:
           - name: chain_id
             value: "exchain-66"
