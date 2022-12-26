@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: okex-watcher-app
 
-  replicas: 2
+  replicas: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -21,16 +21,16 @@ spec:
       labels:
         app: okex-watcher-app
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - okex-watcher-app
-            topologyKey: "kubernetes.io/hostname"
+#      affinity:
+#        podAntiAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#          - labelSelector:
+#              matchExpressions:
+#              - key: app
+#                operator: In
+#                values:
+#                - okex-watcher-app
+#            topologyKey: "kubernetes.io/hostname"
       hostAliases:
       - ip: "159.89.250.255"
         hostnames:
@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: okex-exchain-66
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-okex:a1530d31
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-okex:7de8bd53
         env:
           - name: chain_id
             value: "exchain-66"
