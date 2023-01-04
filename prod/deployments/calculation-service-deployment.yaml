@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: calculation-service
-        image: registry.digitalocean.com/mapofzones/calculation-service:c47af7a4
+        image: registry.digitalocean.com/mapofzones/calculation-service:2cdca4eb
         env:
           - name: DB_URL
             valueFrom:
