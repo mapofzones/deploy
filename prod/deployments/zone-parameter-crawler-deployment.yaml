@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: zone-parameter-crawler
-        image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:latest
+        image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:9148a332
         env:
           - name: SYNC_TIME
             value: "1200s" # 1200s = 20 min
