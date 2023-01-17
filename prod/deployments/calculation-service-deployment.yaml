@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: calculation-service
-        image: registry.digitalocean.com/mapofzones/calculation-service:2cdca4eb
+        image: registry.digitalocean.com/mapofzones/calculation-service:5a71d55e
         env:
           - name: DB_URL
             valueFrom:
@@ -50,5 +50,5 @@ spec:
             memory: "512Mi"
             cpu: "100m"
           limits:
-            memory: "1024Mi"
+            memory: "1324Mi"
             cpu: "2000m"
