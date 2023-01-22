@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: comdex-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-comdex:abae3fa3
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-comdex:496f4c29
         env:
           - name: chain_id
             value: "comdex-1"
