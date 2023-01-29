@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: kichain-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kichain:67334193
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kichain:017a69b1
         env:
           - name: chain_id
             value: "kichain-2"

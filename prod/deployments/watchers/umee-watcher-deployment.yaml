@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: umee-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-umee:165cc654
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-umee:d06682f0
         env:
           - name: chain_id
             value: "umee-1"
