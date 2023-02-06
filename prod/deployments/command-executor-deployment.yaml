@@ -4,7 +4,6 @@ metadata:
   name: command-executor-deploy
   labels:
     app: command-executor-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -22,7 +21,7 @@ spec:
     spec:
       containers:
       - name: command-executor
-        image: registry.digitalocean.com/mapofzones/command-executor:a5cf11b0
+        image: registry.digitalocean.com/mapofzones/command-executor:327ff59e
         env:
           - name: accesstoken
             valueFrom:
