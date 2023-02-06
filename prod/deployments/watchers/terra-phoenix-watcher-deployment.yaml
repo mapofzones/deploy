@@ -40,7 +40,7 @@ spec:
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra-phoenix:8c24dc61
         env:
           - name: chain_id
-            value: "columbus-5"
+            value: "phoenix-1"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
