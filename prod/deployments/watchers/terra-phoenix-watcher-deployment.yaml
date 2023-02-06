@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: terra-watcher-deploy
+  labels:
+    app: terra-watcher-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: terra-phoenix-watcher-app
+
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: terra-phoenix-watcher-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - terra-phoenix-watcher-app
+            topologyKey: "kubernetes.io/hostname"
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
+      containers:
+
+      - name: terra-phoenix-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra-phoenix:0cf14b47
+        env:
+          - name: chain_id
+            value: "columbus-5"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+          - name: queue
+            value: "blocks_v3"
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1000Mi"
+            cpu: "150m"
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"
