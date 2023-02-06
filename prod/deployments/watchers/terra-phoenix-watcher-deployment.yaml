@@ -1,10 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: terra-watcher-deploy
+  name: terra-phoenix-watcher-deploy
   labels:
-    app: terra-watcher-app
-  annotations:
+    app: terra-phoenix-watcher-app
 spec:
   selector:
     matchLabels:
