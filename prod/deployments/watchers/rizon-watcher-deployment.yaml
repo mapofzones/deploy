@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: rizon-titan-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-rizon:c6b1511f
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-rizon:7fc03d26
         env:
           - name: chain_id
             value: "titan-1"
