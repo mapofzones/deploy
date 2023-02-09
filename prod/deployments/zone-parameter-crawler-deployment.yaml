@@ -4,7 +4,6 @@ metadata:
   name: zone-parameter-crawler-deploy
   labels:
     app: zone-parameter-crawler-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -22,7 +21,7 @@ spec:
     spec:
       containers:
       - name: zone-parameter-crawler
-        image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:4ae9176e
+        image: registry.digitalocean.com/mapofzones/zone-parameter-crawler:100ed0ca
         env:
           - name: SYNC_TIME
             value: "1200s" # 1200s = 20 min
