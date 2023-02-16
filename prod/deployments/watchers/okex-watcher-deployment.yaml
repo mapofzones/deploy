@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: okex-exchain-66
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-okex:e660b150
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-okex:16915efd
         env:
           - name: chain_id
             value: "exchain-66"
