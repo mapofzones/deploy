@@ -4,7 +4,6 @@ metadata:
   name: crypto-org-watcher-deploy
   labels:
     app: crypto-org-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: crypto-org-chain-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:0b290a1c
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cryptoorg:a92888cf
         env:
           - name: chain_id
             value: "crypto-org-chain-mainnet-1"
