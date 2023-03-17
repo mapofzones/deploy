@@ -4,7 +4,6 @@ metadata:
   name: juno-watcher-deploy
   labels:
     app: juno-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: juno-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:d805f0a9
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:83124fb9
         env:
           - name: chain_id
             value: "juno-1"
