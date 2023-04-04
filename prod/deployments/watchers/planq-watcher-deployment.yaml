@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: juno-watcher-deploy
+  name: planq-watcher-deploy
   labels:
-    app: juno-watcher-app
+    app: planq-watcher-app
 spec:
   selector:
     matchLabels:
-      app: juno-watcher-app
+      app: planq-watcher-app
 
   replicas: 1
   strategy:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: juno-watcher-app
+        app: planq-watcher-app
     spec:
       affinity:
         podAntiAffinity:
@@ -28,7 +28,7 @@ spec:
               - key: app
                 operator: In
                 values:
-                - juno-watcher-app
+                - planq-watcher-app
             topologyKey: "kubernetes.io/hostname"
       hostAliases:
       - ip: "159.89.250.255"
@@ -36,11 +36,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: juno-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-juno:83124fb9
+      - name: osmosis-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-planq:05bd35fe
         env:
           - name: chain_id
-            value: "juno-1"
+            value: "planq_7070-2"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
@@ -52,12 +52,12 @@ spec:
                 name: prodsecret
                 key: db_graphql
           - name: queue
-            value: "blocks_v3"
+            value: "blocks_v3_2"
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "150Mi"
-            cpu: "30m"
+            memory: "512Mi"
+            cpu: "500m"
           limits:
-            memory: "256Mi"
-            cpu: "250m"
+            memory: "2048Mi"
+            cpu: "1000m"

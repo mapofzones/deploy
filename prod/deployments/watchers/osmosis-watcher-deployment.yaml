@@ -4,7 +4,6 @@ metadata:
   name: osmosis-watcher-deploy
   labels:
     app: osmosis-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: osmosis-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:f56859ff
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:6a87011c
         env:
           - name: chain_id
             value: "osmosis-1"

@@ -4,7 +4,6 @@ metadata:
   name: regen-watcher-deploy
   labels:
     app: regen-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: regen-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:59c3f6ab
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:accf124a
         env:
           - name: chain_id
             value: "regen-1"

@@ -4,7 +4,6 @@ metadata:
   name: impacthub-watcher-deploy
   labels:
     app: impacthub-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
