@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hasura-data
+  namespace: prod
+  # annotations:
+  #   cert-manager.io/issuer: letsencrypt-nginx
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  # tls:
+  #   - hosts:
+  #     - quote.starter-kit.online
+  #     secretName: letsencrypt-nginx-quote
+  tls:
+    - hosts:
+        - api-data.mapofzones.com
+      secretName: test2-kubernetes-tls
+  rules:
+    - host: api-data.mapofzones.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hasura-data
+                port:
+                  number: 80
