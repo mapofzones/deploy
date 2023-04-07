@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stats-extractor-deploy
+  labels:
+    app: stats-extractor-app
+spec:
+  selector:
+    matchLabels:
+      app: stats-extractor-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: stats-extractor-app
+    spec:
+      containers:
+      - name: stats-extractor
+        image: registry.digitalocean.com/mapofzones/stats-extractor:3e3a33de
+        env:
+          - name: SYNC_TIME
+            value: "21600000"
+          - name: CASHFLOW_START
+            value: "2022-03-01T00:00:00.000"
+          - name: CASHFLOW_PERIOD
+            value: "30"
+          - name: CORE_POOL_SIZE
+            value: "1"
+          - name: API_POOL_SIZE
+            value: "1"
+          - name: API_DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: extractor_DB_USER
+          - name: API_DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: extractor_DB_PASS
+          - name: API_DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: extractor_DB_URL
+          - name: CORE_DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: adaptor_DB_USER
+          - name: CORE_DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: adaptor_DB_PASS
+          - name: CORE_DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: adaptor_DB_URL
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "300m"
+          limits:
+            memory: "1024Mi"
+            cpu: "300m"
