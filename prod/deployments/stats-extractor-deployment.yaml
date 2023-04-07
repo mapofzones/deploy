@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: stats-extractor
-        image: registry.digitalocean.com/mapofzones/stats-extractor:3e3a33de
+        image: registry.digitalocean.com/mapofzones/stats-extractor:8d79c850
         env:
           - name: SYNC_TIME
             value: "21600000"
@@ -29,8 +29,10 @@ spec:
             value: "2022-03-01T00:00:00.000"
           - name: CASHFLOW_PERIOD
             value: "30"
-          - name: CORE_POOL_SIZE
-            value: "1"
+          - name: TRANSFERS_START
+            value: "2022-03-01T00:00:00.000"
+          - name: TRANSFERS_PERIOD
+            value: "30"
           - name: API_POOL_SIZE
             value: "1"
           - name: API_DB_USER
@@ -48,6 +50,8 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: extractor_DB_URL
+          - name: CORE_POOL_SIZE
+            value: "1"
           - name: CORE_DB_USER
             valueFrom:
               secretKeyRef:
