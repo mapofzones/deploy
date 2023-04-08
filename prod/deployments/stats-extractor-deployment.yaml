@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: stats-extractor
-        image: registry.digitalocean.com/mapofzones/stats-extractor:bb8068b7
+        image: registry.digitalocean.com/mapofzones/stats-extractor:30b1b03d
         env:
           - name: SYNC_TIME
             value: "21600000"
