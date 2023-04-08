@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: stats-extractor
-        image: registry.digitalocean.com/mapofzones/stats-extractor:8d79c850
+        image: registry.digitalocean.com/mapofzones/stats-extractor:bb8068b7
         env:
           - name: SYNC_TIME
             value: "21600000"
@@ -32,6 +32,18 @@ spec:
           - name: TRANSFERS_START
             value: "2022-03-01T00:00:00.000"
           - name: TRANSFERS_PERIOD
+            value: "30"
+          - name: MAU_START
+            value: "2022-03-01T00:00:00.000"
+          - name: MAU_PERIOD
+            value: "30"
+          - name: DAU_START
+            value: "2022-03-01T00:00:00.000"
+          - name: DAU_PERIOD
+            value: "30"
+          - name: TRANSACTIONS_START
+            value: "2022-03-01T00:00:00.000"
+          - name: TRANSACTIONS_PERIOD
             value: "30"
           - name: API_POOL_SIZE
             value: "1"
