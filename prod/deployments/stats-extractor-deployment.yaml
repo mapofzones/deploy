@@ -21,30 +21,30 @@ spec:
     spec:
       containers:
       - name: stats-extractor
-        image: registry.digitalocean.com/mapofzones/stats-extractor:6f4d08c2
+        image: registry.digitalocean.com/mapofzones/stats-extractor:d9d8d219
         env:
           - name: SYNC_TIME
             value: "21600000"
           - name: CASHFLOW_START
             value: "2022-03-01T00:00:00.000"
           - name: CASHFLOW_PERIOD
-            value: "30"
+            value: "1"
           - name: TRANSFERS_START
             value: "2022-03-01T00:00:00.000"
           - name: TRANSFERS_PERIOD
-            value: "30"
+            value: "1"
           - name: MAU_START
             value: "2022-03-01T00:00:00.000"
           - name: MAU_PERIOD
-            value: "30"
+            value: "1"
           - name: DAU_START
             value: "2022-03-01T00:00:00.000"
           - name: DAU_PERIOD
-            value: "30"
+            value: "1"
           - name: TRANSACTIONS_START
             value: "2022-03-01T00:00:00.000"
           - name: TRANSACTIONS_PERIOD
-            value: "30"
+            value: "1"
           - name: API_POOL_SIZE
             value: "1"
           - name: API_DB_USER
@@ -82,8 +82,8 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "1024Mi"
+            memory: "256Mi"
             cpu: "300m"
           limits:
-            memory: "1024Mi"
+            memory: "392Mi"
             cpu: "300m"
