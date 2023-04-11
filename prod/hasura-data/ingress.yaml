@@ -16,10 +16,10 @@ spec:
   #     secretName: letsencrypt-nginx-quote
   tls:
     - hosts:
-        - api-data.mapofzones.com
+        - api-owo-data.mapofzones.com
       secretName: test2-kubernetes-tls
   rules:
-    - host: api-data.mapofzones.com
+    - host: api-owo-data.mapofzones.com
       http:
         paths:
           - path: /
