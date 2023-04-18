@@ -40,7 +40,7 @@ spec:
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-impacthub:473282d7
         env:
           - name: chain_id
-            value: "ixo-4"
+            value: "ixo-5"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
