@@ -4,7 +4,6 @@ metadata:
   name: stride-watcher-deploy
   labels:
     app: stride-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: stride-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stride:bb5845a0
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stride:e9ac3fe7
         env:
           - name: chain_id
             value: "stride-1"
