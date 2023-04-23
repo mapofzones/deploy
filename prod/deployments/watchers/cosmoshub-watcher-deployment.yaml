@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: cosmoshub-4
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cosmoshub:07ce3dfe
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cosmoshub:fe20437b
         env:
           - name: chain_id
             value: "cosmoshub-4"
