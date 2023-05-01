@@ -4,7 +4,6 @@ metadata:
   name: endpoint-checker-deploy
   labels:
     app: endpoint-checker-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -22,7 +21,7 @@ spec:
     spec:
       containers:
       - name: endpoint-checker
-        image: registry.digitalocean.com/mapofzones/endpoint-checker:98a0eb9d
+        image: registry.digitalocean.com/mapofzones/endpoint-checker:5a607e6e
         env:
           - name: POOL_SIZE
             value: "1"
