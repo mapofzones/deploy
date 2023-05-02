@@ -4,7 +4,6 @@ metadata:
   name: token-matcher-deploy
   labels:
     app: token-matcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -22,7 +21,7 @@ spec:
     spec:
       containers:
       - name: token-matcher
-        image: registry.digitalocean.com/mapofzones/token-matcher:0386ae33
+        image: registry.digitalocean.com/mapofzones/token-matcher:7548542d
         env:
           - name: DB_URL
             valueFrom:
