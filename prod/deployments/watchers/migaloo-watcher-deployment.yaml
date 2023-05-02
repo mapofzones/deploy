@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: migaloo-watcher-deploy
+  labels:
+    app: migaloo-watcher-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: migaloo-watcher-app
+
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: migaloo-watcher-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - migaloo-watcher-app
+            topologyKey: "kubernetes.io/hostname"
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
+      containers:
+
+      - name: migaloo-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-migaloo:cc09e8c9
+        env:
+          - name: chain_id
+            value: "migaloo-1"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+          - name: queue
+            value: "blocks_v3"
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "150Mi"
+            cpu: "30m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
