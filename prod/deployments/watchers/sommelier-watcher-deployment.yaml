@@ -4,7 +4,6 @@ metadata:
   name: sommelier-watcher-deploy
   labels:
     app: sommelier-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: sommelier-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sommelier:00d9733f
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sommelier:a07a239a
         env:
           - name: chain_id
             value: "sommelier-3"
