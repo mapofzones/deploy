@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: zone-height-checker
-        image: registry.digitalocean.com/mapofzones/zone-height-checker:535f233a
+        image: registry.digitalocean.com/mapofzones/state-reporter:f4aff798
         env:
           - name: UNUPDATED_ZONE_SYNC_TIME
             value: "4h"
@@ -31,6 +31,8 @@ spec:
             value: "1d"
           - name: CHAIN_ID_CHECK_LAST_DAYS
             value: "7"
+#          - name: CHAIN_ID_IGNORE
+#            value: ""
           - name: EMULATOR_MODE
             value: "false"
           - name: DB_URL
