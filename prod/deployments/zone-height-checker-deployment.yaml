@@ -4,7 +4,6 @@ metadata:
   name: zone-height-checker-deploy
   labels:
     app: zone-height-checker-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -24,8 +23,16 @@ spec:
       - name: zone-height-checker
         image: registry.digitalocean.com/mapofzones/zone-height-checker:535f233a
         env:
-          - name: SYNC_TYME
-            value: "14400000" # in milliseconds -> 1000 * 60 * 60 * 4 = 3 600 000(1 hour) * 4 = 14 400 000 = 4 hour
+          - name: UNUPDATED_ZONE_SYNC_TIME
+            value: "4h"
+          - name: IBC_DATA_SYNC_TYME
+            value: "1d"
+          - name: CHAIN_ID_SYNC_TYME
+            value: "1d"
+          - name: CHAIN_ID_CHECK_LAST_DAYS
+            value: "7"
+          - name: EMULATOR_MODE
+            value: "false"
           - name: DB_URL
             valueFrom:
               secretKeyRef:
