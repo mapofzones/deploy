@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: zone-height-checker
-        image: registry.digitalocean.com/mapofzones/zone-height-checker:535f233a
+        image: registry.digitalocean.com/mapofzones/state-reporter:1d07611d
         env:
           - name: SYNC_TYME
             value: "14400000" # in milliseconds -> 1000 * 60 * 60 * 4 = 3 600 000(1 hour) * 4 = 14 400 000 = 4 hour
