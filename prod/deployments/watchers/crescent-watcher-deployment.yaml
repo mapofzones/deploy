@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: crescent-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-crescent:25f624d6
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-crescent:84c3e4e4
         env:
           - name: chain_id
             value: "crescent-1"
