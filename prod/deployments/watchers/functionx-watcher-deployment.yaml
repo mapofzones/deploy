@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: functionx-fxcore
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-functionx:381e5b01
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-functionx:c06788cc
         env:
           - name: chain_id
             value: "fxcore"
