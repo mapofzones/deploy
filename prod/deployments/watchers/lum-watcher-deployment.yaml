@@ -4,7 +4,6 @@ metadata:
   name: lum-watcher-deploy
   labels:
     app: lum-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: lum-network-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-lum:c2d92bae
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-lum:9762c816
         env:
           - name: chain_id
             value: "lum-network-1"

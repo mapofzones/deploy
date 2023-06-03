@@ -4,7 +4,6 @@ metadata:
   name: functionx-watcher-deploy
   labels:
     app: functionx-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: functionx-fxcore
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-functionx:467f4333
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-functionx:381e5b01
         env:
           - name: chain_id
             value: "fxcore"
