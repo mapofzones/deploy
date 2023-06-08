@@ -4,7 +4,6 @@ metadata:
   name: gravitybridge-watcher-deploy
   labels:
     app: gravitybridge-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: gravity-bridge-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-gravity-bridge:9c0d18ae
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-gravity-bridge:503763ec
         env:
           - name: chain_id
             value: "gravity-bridge-3"
