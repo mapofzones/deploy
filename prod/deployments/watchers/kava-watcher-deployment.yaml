@@ -4,7 +4,6 @@ metadata:
   name: kava-watcher-deploy
   labels:
     app: kava-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: kava-2222-10
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kava:42852470
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kava:d263e13a
         env:
           - name: chain_id
             value: "kava_2222-10"
