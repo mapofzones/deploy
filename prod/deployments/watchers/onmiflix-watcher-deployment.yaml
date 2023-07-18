@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: omniflixhub-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-omniflix:8ba3d315
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-omniflix:055bc886
         env:
           - name: chain_id
             value: "omniflixhub-1"
