@@ -40,7 +40,7 @@ spec:
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-archway:b47180de
         env:
           - name: chain_id
-            value: "dimension_37-1"
+            value: "archway-1"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
