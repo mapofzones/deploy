@@ -4,7 +4,6 @@ metadata:
   name: comdex-watcher-deploy
   labels:
     app: comdex-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
@@ -38,7 +37,7 @@ spec:
       containers:
 
       - name: comdex-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-comdex:4ede185b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-comdex:7727e232
         env:
           - name: chain_id
             value: "comdex-1"
