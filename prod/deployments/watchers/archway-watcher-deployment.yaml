@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: archway-watcher-deploy
+  labels:
+    app: archway-watcher-app
+spec:
+  selector:
+    matchLabels:
+      app: archway-watcher-app
+
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: archway-watcher-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - archway-watcher-app
+            topologyKey: "kubernetes.io/hostname"
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
+      containers:
+
+      - name: archway
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-archway:b47180de
+        env:
+          - name: chain_id
+            value: "dimension_37-1"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+          - name: queue
+            value: "blocks_v3"
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "150Mi"
+            cpu: "30m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
