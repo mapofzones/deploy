@@ -4,7 +4,6 @@
    name: injective-watcher-deploy
    labels:
      app: injective-watcher-app
-   annotations:
  spec:
    selector:
      matchLabels:
@@ -38,7 +37,7 @@
        containers:
 
        - name: injective-1
-         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective:a9084e4a
+         image: registry.digitalocean.com/mapofzones/cosmos-watcher-injective:8c1377c0
          env:
            - name: chain_id
              value: "injective-1"
