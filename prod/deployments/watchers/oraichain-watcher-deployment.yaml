@@ -4,12 +4,10 @@ metadata:
   name: oraichain-watcher-deploy
   labels:
     app: oraichain-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
       app: oraichain-watcher-app
-
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -38,7 +36,7 @@ spec:
       containers:
 
       - name: oraichain
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-oraichain:cac97641
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-oraichain:a75c77d5
         env:
           - name: chain_id
             value: "Oraichain"
