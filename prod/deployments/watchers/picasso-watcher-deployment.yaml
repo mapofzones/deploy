@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lum-watcher-deploy
+  name: picasso-watcher-deploy
   labels:
-    app: lum-watcher-app
+    app: picasso-watcher-app
 spec:
   selector:
     matchLabels:
-      app: lum-watcher-app
+      app: picasso-watcher-app
 
-  replicas: 1
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: lum-watcher-app
+        app: picasso-watcher-app
     spec:
       affinity:
         podAntiAffinity:
@@ -28,7 +28,7 @@ spec:
               - key: app
                 operator: In
                 values:
-                - lum-watcher-app
+                - picasso-watcher-app
             topologyKey: "kubernetes.io/hostname"
       hostAliases:
       - ip: "159.89.250.255"
@@ -36,11 +36,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: lum-network-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-lum:025013bc
+      - name: picasso
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-picasso:5b61193f
         env:
           - name: chain_id
-            value: "lum-network-1"
+            value: "centauri-1"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
