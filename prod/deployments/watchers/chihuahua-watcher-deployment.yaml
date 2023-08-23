@@ -4,12 +4,10 @@ metadata:
   name: chihuahua-watcher-deploy
   labels:
     app: chihuahua-watcher-app
-  annotations:
 spec:
   selector:
     matchLabels:
       app: chihuahua-watcher-app
-
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -38,7 +36,7 @@ spec:
       containers:
 
       - name: chihuahua-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-chihuahua:6ad01242
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-chihuahua:e659ea6d
         env:
           - name: chain_id
             value: "chihuahua-1"
