@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: desmos-mainnet
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-desmos:d993f8bb
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-desmos:9da289a1
         env:
           - name: chain_id
             value: "desmos-mainnet"
