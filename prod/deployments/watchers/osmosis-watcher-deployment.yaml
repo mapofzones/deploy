@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: osmosis-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:fc4f9bb7
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-osmosis:713f62ce
         env:
           - name: chain_id
             value: "osmosis-1"
