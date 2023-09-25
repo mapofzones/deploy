@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neutron-watcher-deploy
+  labels:
+    app: neutron-watcher-app
+spec:
+  selector:
+    matchLabels:
+      app: neutron-watcher-app
+
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: neutron-watcher-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - neutron-watcher-app
+              topologyKey: "kubernetes.io/hostname"
+      hostAliases:
+        - ip: "159.89.250.255"
+          hostnames:
+            - "api.mapofzones.com"
+      containers:
+        - name: neutron
+          image: registry.digitalocean.com/mapofzones/cosmos-watcher-neutron:888c4e02
+          env:
+            - name: chain_id
+              value: "neutron-1"
+            - name: rabbitmq
+              valueFrom:
+                secretKeyRef:
+                  name: prodsecret
+                  key: watcher_rabbitmq
+            - name: graphql
+              valueFrom:
+                secretKeyRef:
+                  name: prodsecret
+                  key: db_graphql
+            - name: queue
+              value: "blocks_v3"
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "150Mi"
+              cpu: "30m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
