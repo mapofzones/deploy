@@ -35,7 +35,7 @@ spec:
           hostnames:
             - "api.mapofzones.com"
       containers:
-        - name: neutron
+        - name: neutron-1
           image: registry.digitalocean.com/mapofzones/cosmos-watcher-neutron:798db8ec
           env:
             - name: chain_id
@@ -51,7 +51,7 @@ spec:
                   name: prodsecret
                   key: db_graphql
             - name: queue
-              value: "blocks_v3"
+              value: "blocks_v3_2"
           imagePullPolicy: Always
           resources:
             requests:
