@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: nois-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-nois:registry.digitalocean.com/mapofzones/cosmos-watcher-nois:44b4df40
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-nois:44b4df40
         env:
           - name: chain_id
             value: "nois-1"
