@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: regen-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:accf124a
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-regen:4d00f62d
         env:
           - name: chain_id
             value: "regen-1"
