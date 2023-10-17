@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: kaiyo-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kujira:49c803ed
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kujira:0c4ead0b
         env:
           - name: chain_id
             value: "kaiyo-1"
