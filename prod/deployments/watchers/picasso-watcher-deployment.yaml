@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: picasso
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-picasso:18b89f00
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-picasso:5f8e2b44
         env:
           - name: chain_id
             value: "centauri-1"
