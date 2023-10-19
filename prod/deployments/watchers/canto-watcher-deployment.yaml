@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: canto-7700-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-canto:87310277
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-canto:7c5fcea2
         env:
           - name: chain_id
             value: "canto_7700-1"
