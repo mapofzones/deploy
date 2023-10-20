@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: evmos-9001-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-evmos:4795d582
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-evmos:ce1ca77c
         env:
           - name: chain_id
             value: "evmos_9001-2"
