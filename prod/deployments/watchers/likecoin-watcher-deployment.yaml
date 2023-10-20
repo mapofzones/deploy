@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: likecoin-mainnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-likecoin:fc53ed6f
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-likecoin:5095ec09
         env:
           - name: chain_id
             value: "likecoin-mainnet-2"
