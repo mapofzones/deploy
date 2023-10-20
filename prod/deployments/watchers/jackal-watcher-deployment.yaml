@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: jackal-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-jackal:16246bc8
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-jackal:081e81dd
         env:
           - name: chain_id
             value: "jackal-1"
