@@ -36,7 +36,7 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: haqq_11235-1
+      - name: haqq-11235-1
         image: registry.digitalocean.com/mapofzones/cosmos-wacher-haqq:aba5f02b
         env:
           - name: chain_id
