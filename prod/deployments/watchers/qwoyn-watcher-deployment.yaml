@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: qwoyn-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-qwoyn:81029b76
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-qwoyn:d6921533
         env:
           - name: chain_id
             value: "qwoyn-1"

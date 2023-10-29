@@ -38,7 +38,7 @@ spec:
 
       - name: dydx-mainnet-1
 
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dydx:6a323070
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dydx:0d3b88df
         env:
           - name: chain_id
             value: "dydx-mainnet-1"
