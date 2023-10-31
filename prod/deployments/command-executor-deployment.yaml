@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: command-executor
-        image: registry.digitalocean.com/mapofzones/command-executor:2153b85d
+        image: registry.digitalocean.com/mapofzones/command-executor:1f1f7906
         env:
           - name: accesstoken
             valueFrom:
