@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: celestia
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-celestia:1f6be09e
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-celestia:cc73f14d
         env:
           - name: chain_id
             value: "celestia"
