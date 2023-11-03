@@ -9,7 +9,7 @@
      matchLabels:
        app: injective-watcher-app
 
-   replicas: 3
+   replicas: 1
    strategy:
      type: RollingUpdate
      rollingUpdate:
@@ -56,8 +56,8 @@
          imagePullPolicy: Always
          resources:
            requests:
-             memory: "100Mi"
-             cpu: "50m"
+             memory: "512Mi"
+             cpu: "500m"
            limits:
-             memory: "256Mi"
-             cpu: "100m"
+             memory: "512Mi"
+             cpu: "500m"
