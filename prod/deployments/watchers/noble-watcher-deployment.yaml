@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: noble
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-noble:8d471fc6
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-noble:5797c3a7
         env:
           - name: chain_id
             value: "noble-1"
