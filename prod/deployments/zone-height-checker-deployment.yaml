@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: zone-height-checker
-        image: registry.digitalocean.com/mapofzones/state-reporter:1d07611d
+        image: registry.digitalocean.com/mapofzones/state-reporter:c62f2273
         env:
           - name: SYNC_TYME
             value: "14400000" # in milliseconds -> 1000 * 60 * 60 * 4 = 3 600 000(1 hour) * 4 = 14 400 000 = 4 hour
@@ -33,6 +33,10 @@ spec:
             value: "1d"
           - name: CHAIN_ID_CHECK_LAST_DAYS
             value: "7"
+          - name: UNUPDATED_PRICE_SYNC_TIME
+            value: "3h"
+          - name: CHAIN_ID_CHECK_LAST_DAYS
+            value: "1h"
 #          - name: CHAIN_ID_IGNORE
 #            value: ""
           - name: EMULATOR_MODE
