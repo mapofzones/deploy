@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: terra-phoenix-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra-phoenix:7333da53
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-terra-phoenix:db94211d
         env:
           - name: chain_id
             value: "phoenix-1"
