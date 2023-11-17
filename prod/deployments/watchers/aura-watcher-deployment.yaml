@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: xstaxy-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-aura:793dcb88
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-aura:dbcfe024
         env:
           - name: chain_id
             value: "xstaxy-1"
