@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: akashnet-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-akash:270803f2
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-akash:9f76e723
         env:
           - name: chain_id
             value: "akashnet-2"
