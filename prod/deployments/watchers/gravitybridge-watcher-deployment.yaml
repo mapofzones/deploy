@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: gravity-bridge-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-gravity-bridge:503763ec
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-gravity-bridge:f6241899
         env:
           - name: chain_id
             value: "gravity-bridge-3"
