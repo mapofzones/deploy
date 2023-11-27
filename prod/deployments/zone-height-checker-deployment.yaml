@@ -61,6 +61,11 @@ spec:
               secretKeyRef:
                 name: prodsecret
                 key: zone-height-checker_CHAT_ID
+          - name: PRICE_CHAT_ID
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: zone-height-checker_PRICE_CHAT_ID
           - name: TOKEN
             valueFrom:
               secretKeyRef:
