@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: realionetwork-3301-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-realio:bc524438
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-realio:3af9e4ce
         env:
           - name: chain_id
             value: "realionetwork_3301-1"
