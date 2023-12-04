@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: commercio-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-commercio:810e3e4b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-commercio:708be382
         env:
           - name: chain_id
             value: "commercio-3"

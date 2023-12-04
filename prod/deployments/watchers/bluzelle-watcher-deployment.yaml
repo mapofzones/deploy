@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: bluzelle-9
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bluzelle:810e3e4b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bluzelle:d780a049
         env:
           - name: chain_id
             value: "bluzelle-9"
