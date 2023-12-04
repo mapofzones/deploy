@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echelon-watcher-deploy
+  name: provenance-watcher-deploy
   labels:
-    app: echelon-watcher-app
+    app: provenance-watcher-app
 spec:
   selector:
     matchLabels:
-      app: echelon-watcher-app
+      app: provenance-watcher-app
 
   replicas: 1
   strategy:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: echelon-watcher-app
+        app: provenance-watcher-app
     spec:
       affinity:
         podAntiAffinity:
@@ -28,7 +28,7 @@ spec:
               - key: app
                 operator: In
                 values:
-                - echelon-watcher-app
+                - provenance-watcher-app
             topologyKey: "kubernetes.io/hostname"
       hostAliases:
       - ip: "159.89.250.255"
@@ -36,11 +36,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: echelon-3000-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-echelon:abed4215
+      - name: pio-mainnet-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-passage:49f022c5
         env:
           - name: chain_id
-            value: "echelon_3000-3"
+            value: "pio-mainnet-1"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
