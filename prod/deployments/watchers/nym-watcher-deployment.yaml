@@ -36,11 +36,11 @@ spec:
         - "api.mapofzones.com"
       containers:
 
-      - name: nym
+      - name: nyx
         image: registry.digitalocean.com/mapofzones/cosmos-watcher-nym:b4281311
         env:
           - name: chain_id
-            value: "nym"
+            value: "nyx"
           - name: rabbitmq
             valueFrom:
               secretKeyRef:
