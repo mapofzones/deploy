@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: pio-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-passage:49f022c5
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-provenance:1b5f7329
         env:
           - name: chain_id
             value: "pio-mainnet-1"
