@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: echelon-3000-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-echelon:abed4215
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-echelon:4cacc7aa
         env:
           - name: chain_id
             value: "echelon_3000-3"
