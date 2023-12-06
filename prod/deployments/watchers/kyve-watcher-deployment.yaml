@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: kyve-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kyve:a16f28b0
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kyve:fb047d32
         env:
           - name: chain_id
             value: "kyve-1"
