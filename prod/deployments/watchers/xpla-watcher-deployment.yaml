@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: xpla
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-xpla:8ab4da27
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-xpla:70a82659
         env:
           - name: chain_id
             value: "dimension_37-1"
