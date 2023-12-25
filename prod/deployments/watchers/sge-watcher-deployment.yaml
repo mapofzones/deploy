@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: sgenet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sge:3f3ff00b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-sge:23d9bdb4
         env:
           - name: chain_id
             value: "sgenet-1"

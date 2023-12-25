@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: agoric-3
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-agoric:e72b6da5
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-agoric:8dfdf297
         env:
           - name: chain_id
             value: "agoric-3"
