@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: coreum-mainnet-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-coreum:d2f8c089
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-coreum:75e01a02
         env:
           - name: chain_id
             value: "coreum-mainnet-1"
