@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: bitsong-2b
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bitsong:ffe7d359
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-bitsong:b1155447
         env:
           - name: chain_id
             value: "bitsong-2b"
