@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: passage-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-passage:49f022c5
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-passage:af4feea3
         env:
           - name: chain_id
             value: "passage-2"
