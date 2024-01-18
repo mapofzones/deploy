@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: stride-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stride:48738706
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stride:d3ff76f0
         env:
           - name: chain_id
             value: "stride-1"
