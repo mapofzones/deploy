@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: processortmp2-1
-        image: registry.digitalocean.com/mapofzones/txs-processor:88a04c17
+        image: registry.digitalocean.com/mapofzones/txs-processor:230b7ee4
         env:
           - name: rabbitmq
             valueFrom:
