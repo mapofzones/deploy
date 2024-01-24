@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: nolus
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-nolus:a6acf143
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-nolus:acaafe70
         env:
           - name: chain_id
             value: "pirin-1"
