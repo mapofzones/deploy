@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: teritori-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-teritori:0515afa6
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-teritori:5939ebc8
         env:
           - name: chain_id
             value: "teritori-1"
