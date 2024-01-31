@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: uptick-117-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-uptick:5c9c3755
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-uptick:53d01611
         env:
           - name: chain_id
             value: "uptick_117-1"
