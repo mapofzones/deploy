@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: andromeda-watcher-deploy
+  labels:
+    app: andromeda-watcher-app
+spec:
+  selector:
+    matchLabels:
+      app: andromeda-watcher-app
+
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: andromeda-watcher-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - andromeda-watcher-app
+            topologyKey: "kubernetes.io/hostname"
+      hostAliases:
+      - ip: "159.89.250.255"
+        hostnames:
+        - "api.mapofzones.com"
+      containers:
+
+      - name: andromeda-1
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-andromeda:f47d5d91
+        env:
+          - name: chain_id
+            value: "andromeda-1"
+          - name: rabbitmq
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: watcher_rabbitmq
+          - name: graphql
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: db_graphql
+          - name: queue
+            value: "blocks_v3_2"
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "200Mi"
+            cpu: "200m"
