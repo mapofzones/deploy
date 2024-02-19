@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: stafihub-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stafihub:86aa0eff
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-stafihub:9d883e40
         env:
           - name: chain_id
             value: "stafihub-1"
