@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: haqq-11235-1
-        image: registry.digitalocean.com/mapofzones/cosmos-wacher-haqq:e3704505
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-haqq:2980f36c
         env:
           - name: chain_id
             value: "haqq_11235-1"
