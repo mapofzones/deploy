@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: archway
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-archway:b47180de
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-archway:7040af71
         env:
           - name: chain_id
             value: "archway-1"
