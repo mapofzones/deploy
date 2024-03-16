@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: migaloo-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-migaloo:cc09e8c9
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-migaloo:d5eefc04
         env:
           - name: chain_id
             value: "migaloo-1"
