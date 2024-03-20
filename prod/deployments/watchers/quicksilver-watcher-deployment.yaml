@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: quicksilver-2
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-quicksilver:53e7837b
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-quicksilver:231ee034
         env:
           - name: chain_id
             value: "quicksilver-2"
