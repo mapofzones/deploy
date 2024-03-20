@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: persistence-core-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-persistence:665bc9d6
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-persistence:bb4b6f38
         env:
           - name: chain_id
             value: "core-1"
