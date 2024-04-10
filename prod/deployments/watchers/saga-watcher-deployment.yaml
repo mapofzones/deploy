@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: ssc-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-saga:b72bb367
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-saga:5c22e210
         env:
           - name: chain_id
             value: "ssc-1"
