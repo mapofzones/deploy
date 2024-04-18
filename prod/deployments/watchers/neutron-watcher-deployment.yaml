@@ -36,7 +36,7 @@ spec:
             - "api.mapofzones.com"
       containers:
         - name: neutron
-          image: registry.digitalocean.com/mapofzones/cosmos-watcher-neutron:216ebcf5
+          image: registry.digitalocean.com/mapofzones/cosmos-watcher-neutron:e0759e94
           env:
             - name: chain_id
               value: "neutron-1"
