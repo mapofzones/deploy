@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: kava-2222-10
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kava:d263e13a
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-kava:554e90df
         env:
           - name: chain_id
             value: "kava_2222-10"
