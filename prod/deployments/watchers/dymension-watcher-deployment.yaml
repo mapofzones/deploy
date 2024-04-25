@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: dymension-1100-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dymension:aac9deaa
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-dymension:1a3a504b
         env:
           - name: chain_id
             value: "dymension_1100-1"
