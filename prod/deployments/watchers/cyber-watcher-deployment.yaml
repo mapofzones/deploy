@@ -38,7 +38,7 @@ spec:
       containers:
 
       - name: cyber-bostrom
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cyber:d08209e0
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-cyber:20284f8a
         env:
           - name: chain_id
             value: "bostrom"
