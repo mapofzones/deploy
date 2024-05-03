@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: andromeda-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-andromeda:f47d5d91
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-andromeda:12bd2068
         env:
           - name: chain_id
             value: "andromeda-1"
