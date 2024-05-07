@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ibc-txs-cleaner-deploy
+  labels:
+    app: ibc-txs-cleaner-app
+spec:
+  selector:
+    matchLabels:
+      app: ibc-txs-cleaner-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: ibc-txs-cleaner-app
+    spec:
+      containers:
+      - name: ibc-txs-cleaner
+        image: registry.digitalocean.com/mapofzones/ibc-txs-cleaner:b8f982b8
+        env:
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: prodsecret
+                key: ibc-txs-cleaner_DB_URL
+          - name: CLEANING_INTERVAL
+            value: "24" # hours
+          - name: CLEANING_INTERVAL_IBC_TXS
+            value: "32" # days
+          - name: CLEANING_INTERVAL_DEFILLAMA_TXS
+            value: "32"  # days
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
