@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: ibc-txs-cleaner
-        image: registry.digitalocean.com/mapofzones/ibc-txs-cleaner:b8f982b8
+        image: registry.digitalocean.com/mapofzones/ibc-txs-cleaner:957a839c
         env:
           - name: DB_URL
             valueFrom:
