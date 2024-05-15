@@ -37,7 +37,7 @@ spec:
       containers:
 
       - name: carbon-1
-        image: registry.digitalocean.com/mapofzones/cosmos-watcher-carbon:4c0a3c0c
+        image: registry.digitalocean.com/mapofzones/cosmos-watcher-carbon:3f73c3ca
         env:
           - name: chain_id
             value: "carbon-1"
